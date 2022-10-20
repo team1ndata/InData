@@ -23,4 +23,4 @@ de tal manera que podamos inferir  la influencia de ciertos parametros en la esp
 
 #### Análisis Predictivo
 Se identificaron las relaciones que existen entre las variables en eventos pasados para luego explotarlas y predecir lo que puede ocurrir si ciertas estadisticas varian, se utilizo RandomForestRegression para esta [aplicación](https://brakions-streamlit-test-app-ifwq1h.streamlitapp.com/), se estandarizaron los valores de -2 a 2.
-![predict](https://user-images.githubusercontent.com/93687273/196828300-4b5e8d32-92c3-4479-87bf-ba014b6451b3.png)
+![predict](https://user-images.githubusercontent.com/93687273/196829652-3e0ba988-7e68-4b50-bc89-f5fdc0466781.png)
