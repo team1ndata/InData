@@ -23,7 +23,7 @@ post transformacion con un intervalo de 30 años (1990-2020)
 ![seriesfinal](https://user-images.githubusercontent.com/93687273/196832479-b2e36596-3774-4dc8-8b4e-0fd11896e536.png)
 
 ## Prediction
-Este apartado se utiliza para predecir la espectativa de vida en años para el entrenamiento se estadarizaron los datos numericos en una escala de  -2 a 2 por eso tendran mas impacto si se introducen  datos de -2.0 a 2.0.
+Este apartado se utiliza para predecir la espectativa de vida en años, para el entrenamiento se estadarizaron los datos numericos en una escala de  -2 a 2, por ende tendran mas impacto si se introducen  datos de -2.0 a 2.0.
 
 - Ejemplo:
 
