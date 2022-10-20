@@ -30,5 +30,7 @@ Este apartado se utiliza para predecir la espectativa de vida en años para el e
 ![predict](https://user-images.githubusercontent.com/93687273/196829652-3e0ba988-7e68-4b50-bc89-f5fdc0466781.png)
 
 
+# [Deploy de aplicacion ](https://brakions-streamlit-test-app-ifwq1h.streamlitapp.com/)
+
 
 
