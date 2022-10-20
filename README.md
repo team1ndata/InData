@@ -4,7 +4,7 @@
 # Life Expentacy
 Este proyecto esta basado en determinar ciertos aspectos que influyen  en la espectativa de vida en distintas regiones del mundo.
 Para ello se utilizaron datos extraidos del  [WorldBank](https://data.worldbank.org/) y la [OMS](https://www.who.int/es/data).
-##### Series
+#### Series
 Se utilizaron 13 series , las cuales 11 son provenientes del [WorldBank](https://data.worldbank.org/) y 2 de la [OMS](https://www.who.int/es/data), los datos extraidos estuvieron en un intervalo de 30 años (1990-2020)
 
 |  Adolescent fertility rate (births per 1,000 women ages 15-19) | Birth rate, crude (per 1000 people) | Current health expenditure (% of GDP) | Current health expenditure per capita (current US$)  | Fertility rate, total (births per woman)  |Life expectancy at birth, total (years)   | Mortality rate, infant (per 1,000 live births)  | Population growth (annual %) | Population, total  | Suicide mortality rate (per 100,000 population)  |GDP(constant LCU)   | BMI &GreaterEqual; 25 (crude estimate) (%)  | revalence of hypertension among adults aged 30-79 years  |
