@@ -13,7 +13,7 @@ Modelo resultante  de usar (RandomForestRegressor) y utilizado en la aplicacion 
 
 ![Screenshot_5](https://user-images.githubusercontent.com/93687273/197405427-3cff2883-72f0-4bad-99b1-5b6fbe6265a7.png)
 
-- Resultado en Streamlit :
+- Resultado en Streamlit (utilizando los mismos valores):
 
 ![Screenshot_2](https://user-images.githubusercontent.com/93687273/197405374-eebc77d4-649f-4db9-927a-48e13afcf0c4.png)
 
