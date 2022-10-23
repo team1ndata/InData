@@ -26,7 +26,7 @@ De igual manera en la applicacion :
 
 ![Screenshot_4](https://user-images.githubusercontent.com/93687273/197405382-8e36ab1d-af1c-4034-91be-c1660793a0da.png)
 
-- Puede revisar una introduccin del contenido y uso de  la aplicacion creada en Steamlit  [aquí](https://github.com/team1ndata/InData/tree/main/Streamlit-L)
+- Puede revisar una introduccion del contenido y uso de la aplicacion creada en Steamlit  [aquí](https://github.com/team1ndata/InData/tree/main/Streamlit-L)
 
 
 
