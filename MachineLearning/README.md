@@ -2,10 +2,10 @@
 En este apartado encontrara 2 archivos:
 
 - Life_Expentancy_Model.ipynb:
-  Contiene los pasos que seguimos para la creacion del modelo y prueba.
+  Contiene los pasos que seguimos para la creacion del modelo y prueba.(Realizado con RandomForestRegressor)
  
 - pickle_model2020.pkl:
-Modelo resultante utilizado en la aplicacion de Streamlit creada para la  predicion.
+Modelo resultante  de usar (RandomForestRegressor) y utilizado en la aplicacion de Streamlit para la  predicion.
 
 # Pruebas y Ejemplificacion
 
