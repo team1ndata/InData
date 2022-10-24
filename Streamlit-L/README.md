@@ -31,6 +31,6 @@ Este apartado se utiliza para predecir la espectativa de vida en años, para el 
 
 
 # [Deploy de aplicacion ](https://brakions-streamlit-test-app-ifwq1h.streamlitapp.com/)
-
+[![streamlit-logo-secondary-colormark-lighttext](https://user-images.githubusercontent.com/93687273/197578006-9d885cf3-0d5b-4c84-baff-7f1b1ac88fd4.png) ](https://brakions-streamlit-test-app-ifwq1h.streamlitapp.com/)
 
 
