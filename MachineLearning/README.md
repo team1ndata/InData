@@ -1,4 +1,4 @@
-# Contenido 
+# Contenido
 En este apartado encontrara 2 archivos:
 
 - Life_Expentancy_Model.ipynb:
@@ -7,7 +7,8 @@ En este apartado encontrara 2 archivos:
 - pickle_model2020.pkl:
 Modelo resultante  de usar (RandomForestRegressor) y utilizado en la aplicacion de Streamlit para la  predicion.
 
-# Pruebas y Ejemplificacion
+
+## Pruebas y Ejemplificacion
 
 - Resultado en el Notebook :
 
@@ -27,7 +28,6 @@ De igual manera en la applicacion :
 ![Screenshot_4](https://user-images.githubusercontent.com/93687273/197405382-8e36ab1d-af1c-4034-91be-c1660793a0da.png)
 
 - Puede revisar una introduccion del contenido y uso de la aplicacion creada en Steamlit  [aquí](https://github.com/team1ndata/InData/tree/main/Streamlit-L)
-
 
 
 
