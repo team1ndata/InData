@@ -1,6 +1,8 @@
 # Contenido
 En este apartado encontrara archivos creados en  PowerPoint   para cada presentacion que se dio a lo largo de estas semanas.
 
+![x](https://i.picasion.com/pic92/12c90418ec08cc3fc6c8d186a7096c99.gif)
+
 - [Esperanza_de_vida](https://github.com/team1ndata/InData/raw/main/Presentaciones/Esperanza_de_vida.pptx):
 
 ![p-01](https://user-images.githubusercontent.com/93687273/197568402-dbd6e72b-3826-43b9-8569-42c352786eb9.png)
