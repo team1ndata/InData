@@ -119,6 +119,594 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Copy data OMS_1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy data WorldBank",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "NCD_HYP_PREVALENCE_A"
+					},
+					{
+						"name": "Destination",
+						"value": "RAW.NCD_HYP_PREVALENCE_A"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "ODataSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE RAW. NCD_HYP_PREVALENCE_A",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Id",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "Id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "IndicatorCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IndicatorCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SpatialDimType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SpatialDimType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SpatialDim",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SpatialDim",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimeDimType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDim",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TimeDim",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim1Type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim1Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim2Type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim2Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim3Type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim3Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DataSourceDimType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DataSourceDimType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DataSourceDim",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DataSourceDim",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Value",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Value",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NumericValue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "NumericValue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Low",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Low",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "High",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "High",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Comments",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Comments",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Date",
+									"type": "DateTimeOffset"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "DateTimeOffset"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimensionValue",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimeDimensionValue",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimensionBegin",
+									"type": "DateTimeOffset"
+								},
+								"sink": {
+									"name": "TimeDimensionBegin",
+									"type": "DateTimeOffset"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimensionEnd",
+									"type": "DateTimeOffset"
+								},
+								"sink": {
+									"name": "TimeDimensionEnd",
+									"type": "DateTimeOffset"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_j4u",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDWHENRY",
+						"type": "DatasetReference",
+						"parameters": {
+							"vEsquema": "RAW",
+							"vTabla": "NCD_HYP_PREVALENCE_A"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy data OMS_2",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy data OMS_1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "NCD_HYP_PREVALENCE_A"
+					},
+					{
+						"name": "Destination",
+						"value": "RAW.NCD_HYP_PREVALENCE_A"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "ODataSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE RAW. NCD_HYP_PREVALENCE_A",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Id",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "Id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "IndicatorCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IndicatorCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SpatialDimType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SpatialDimType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SpatialDim",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SpatialDim",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimeDimType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDim",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TimeDim",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim1Type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim1Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim2Type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim2Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim3Type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim3Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Dim3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dim3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DataSourceDimType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DataSourceDimType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DataSourceDim",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DataSourceDim",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Value",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Value",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NumericValue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "NumericValue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Low",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Low",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "High",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "High",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Comments",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Comments",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Date",
+									"type": "DateTimeOffset"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "DateTimeOffset"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimensionValue",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TimeDimensionValue",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimensionBegin",
+									"type": "DateTimeOffset"
+								},
+								"sink": {
+									"name": "TimeDimensionBegin",
+									"type": "DateTimeOffset"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimensionEnd",
+									"type": "DateTimeOffset"
+								},
+								"sink": {
+									"name": "TimeDimensionEnd",
+									"type": "DateTimeOffset"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_j4u",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDWHENRY",
+						"type": "DatasetReference",
+						"parameters": {
+							"vEsquema": "RAW",
+							"vTabla": "NCD_HYP_PREVALENCE_A"
+						}
+					}
+				]
 			}
 		],
 		"annotations": []

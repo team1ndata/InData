@@ -17,8 +17,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "",
-			"table": ""
+			"schema": "RAW",
+			"table": "NCD_HYP_PREVALENCE_A"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
