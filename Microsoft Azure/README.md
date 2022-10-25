@@ -11,3 +11,6 @@ pudimos  utilizar de forma eficiente las herramientas de Business Intelligence d
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Wallpoet&size=30&pause=10&width=455&lines=MICROSOFT+AZURE)](https://git.io/typing-svg)
 #
+- Demostracion ,evidencia y ejemplificacion de la estrucctura de las cargas incrementales utilizada por nosotros dentro de Microsoft Azure
+# 
+# ![AZure-ejem](https://user-images.githubusercontent.com/93687273/197791483-4d062fb0-894c-4315-8c75-9782494d0745.png)
