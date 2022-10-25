@@ -17,7 +17,7 @@ Se utilizaron 14 series , las cuales 12 son provenientes del [WorldBank](https:/
 #### Análisis Exploratorio (EDA)
 Se hizo uso de un análisis exploratorio   para detectar características concretas o anormales 
 de tal manera que podamos inferir  la influencia de ciertos parametros en la espectativa de vida.
-- Mediante graficos y de manera intuitiva se pueden vizualizar en el apartado (Graficas x Series) dentro de  esta   [aplicación](https://brakions-streamlit-test-app-ifwq1h.streamlitapp.com/) hecha en [Streamlit](https://streamlit.io/).
+- Mediante graficos y de manera intuitiva se pueden visualizar en el apartado (Graficas x Series) dentro de  esta   [aplicación](https://brakions-streamlit-test-app-ifwq1h.streamlitapp.com/) hecha en [Streamlit](https://streamlit.io/).
 
 ![seriesxregion](https://user-images.githubusercontent.com/93687273/196828202-24ce1011-dc1b-481c-8c19-54a8476f772c.png)
 
