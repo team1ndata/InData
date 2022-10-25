@@ -593,7 +593,14 @@
 			{
 				"name": "Copy SERIESWORLDBANK",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy SERIESWORLDBANK_copy1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 1,
@@ -614,9 +621,9 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE raw.SERIESWORLDBANK",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -638,7 +645,7 @@
 								},
 								"sink": {
 									"name": "indicator_value",
-									"type": "String"
+									"type": "Decimal"
 								}
 							},
 							{
@@ -655,8 +662,8 @@
 									"path": "$['country']['value']"
 								},
 								"sink": {
-									"name": "country_value",
-									"type": "String"
+									"name": "country_vlaue",
+									"type": "Decimal"
 								}
 							},
 							{
@@ -674,7 +681,7 @@
 								},
 								"sink": {
 									"name": "date",
-									"type": "Double"
+									"type": "Int64"
 								}
 							},
 							{
@@ -683,7 +690,7 @@
 								},
 								"sink": {
 									"name": "value",
-									"type": "Double"
+									"type": "Decimal"
 								}
 							}
 						],
@@ -1132,6 +1139,122 @@
 					{
 						"referenceName": "Maestra_Indicadores",
 						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy SERIESWORLDBANK_copy1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 1,
+					"retryIntervalInSeconds": 120,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['indicator']['id']"
+								},
+								"sink": {
+									"name": "indicator_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['indicator']['value']"
+								},
+								"sink": {
+									"name": "indicator_value",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['country']['id']"
+								},
+								"sink": {
+									"name": "country_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['country']['value']"
+								},
+								"sink": {
+									"name": "country_value",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['countryiso3code']"
+								},
+								"sink": {
+									"name": "countryiso3code",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['date']"
+								},
+								"sink": {
+									"name": "date",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']"
+								},
+								"sink": {
+									"name": "value"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Mestra_13_series",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDWHENRY",
+						"type": "DatasetReference",
+						"parameters": {
+							"vEsquema": "raw",
+							"vTabla": "SERIESWORLDBANK1"
+						}
 					}
 				]
 			}
