@@ -12,6 +12,14 @@ pudimos  utilizar de forma eficiente las herramientas de Business Intelligence d
                                                  ![](https://blog.oterinformatica.com/wp-content/uploads/2019/11/azure.png)
 #
 #
+# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Wallpoet&size=30&pause=10&width=455&lines=CONTENIDO)](https://git.io/typing-svg)
+#
+- Trigger: Apartado en donde se establece la frecuencia de actualizacion.
+- Pipeline : Flujo por donde ocurren y se manifiestan procedimientos de extracion y transformacion.
+- Dataflow : Dentro se definen los parameros para cargas incrementales.
+- IntegrationRuntime :Infractustura computacional que provee diferentes entornos de redes.	
+- Factory : Servicio de azure en donde se ejecuta el pipeline. 
+# 
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Wallpoet&size=30&pause=10&width=455&lines=MICROSOFT+AZURE)](https://git.io/typing-svg)
 #
 - Demostracion ,evidencia y ejemplificacion de la estrucctura de las cargas incrementales utilizada por nosotros dentro de Microsoft Azure
