@@ -5,8 +5,20 @@
 			"referenceName": "Azure_SQL_Linked_Service",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"vEsquema": {
+				"type": "string"
+			},
+			"vTabla": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": "@vEsquema",
+			"table": "@vTabla"
+		}
 	}
 }

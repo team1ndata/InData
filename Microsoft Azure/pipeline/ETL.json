@@ -42,7 +42,11 @@
 				"outputs": [
 					{
 						"referenceName": "SQL_Azure",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"vEsquema": "Raw",
+							"vTabla": "WorldBankData"
+						}
 					}
 				]
 			}
