@@ -1,0 +1,124 @@
+{
+	"name": "ETL_InData",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data WorldBank",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE RAW.WORLDBANKDATA",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['indicator']['id']"
+								},
+								"sink": {
+									"name": "indicator_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['indicator']['value']"
+								},
+								"sink": {
+									"name": "indicator_value",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['country']['id']"
+								},
+								"sink": {
+									"name": "country_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['country']['value']"
+								},
+								"sink": {
+									"name": "country_value",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['countryiso3code']"
+								},
+								"sink": {
+									"name": "countryiso3code",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['date']"
+								},
+								"sink": {
+									"name": "date",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']"
+								},
+								"sink": {
+									"name": "value",
+									"type": "Double"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "WorldBank",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDWHENRY",
+						"type": "DatasetReference",
+						"parameters": {
+							"vEsquema": "RAW",
+							"vTabla": "WORLDBANKDATA"
+						}
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
