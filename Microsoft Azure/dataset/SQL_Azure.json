@@ -5,20 +5,12 @@
 			"referenceName": "Azure_SQL_Linked_Service",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"vEsquema": {
-				"type": "string"
-			},
-			"vTabla": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "@vEsquema.()",
-			"table": "@vTabla.()"
+			"schema": "Raw",
+			"table": "worldbankdata"
 		}
 	}
 }

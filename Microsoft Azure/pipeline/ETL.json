@@ -13,7 +13,12 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Destination",
+						"value": "Raw.worldbankdata"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "RestSource",
@@ -26,15 +31,33 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE RAW.WORLDBANKDATA",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
-						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
+							{
+								"source": {
+									"path": "$['indicator']['id']"
+								},
+								"sink": {
+									"name": "indicator_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['indicator']['value']"
+								},
+								"sink": {
+									"name": "indicator_value",
+									"type": "String"
+								}
+							},
 							{
 								"source": {
 									"path": "$['country']['id']"
@@ -68,7 +91,7 @@
 								},
 								"sink": {
 									"name": "date",
-									"type": "Int16"
+									"type": "Int32"
 								}
 							},
 							{
@@ -93,11 +116,7 @@
 				"outputs": [
 					{
 						"referenceName": "SQL_Azure",
-						"type": "DatasetReference",
-						"parameters": {
-							"vEsquema": "RAW",
-							"vTabla": "WorldBankData"
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}
