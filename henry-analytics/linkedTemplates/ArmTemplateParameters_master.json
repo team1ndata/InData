@@ -26,6 +26,9 @@
 		"AzureBlobStorage15_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage16_connectionString": {
+			"value": ""
+		},
 		"AzureBlobStorage2_connectionString": {
 			"value": ""
 		},

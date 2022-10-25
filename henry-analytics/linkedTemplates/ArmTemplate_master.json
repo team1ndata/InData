@@ -35,6 +35,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage15'"
 		},
+		"AzureBlobStorage16_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage16'"
+		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
@@ -319,6 +323,9 @@
 					"AzureBlobStorage15_connectionString": {
 						"value": "[parameters('AzureBlobStorage15_connectionString')]"
 					},
+					"AzureBlobStorage16_connectionString": {
+						"value": "[parameters('AzureBlobStorage16_connectionString')]"
+					},
 					"AzureBlobStorage2_connectionString": {
 						"value": "[parameters('AzureBlobStorage2_connectionString')]"
 					},
@@ -348,9 +355,6 @@
 					},
 					"AzureDataLakeStorage2_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
-					},
-					"AzureSqlDatabase1_connectionString": {
-						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
 					},
 					"Adolescent_fertility_rate_properties_typeProperties_url": {
 						"value": "[parameters('Adolescent_fertility_rate_properties_typeProperties_url')]"
@@ -387,6 +391,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
 					},
 					"AzureSqlDatabase2_connectionString": {
 						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
@@ -444,9 +451,6 @@
 					},
 					"OData1_properties_typeProperties_url": {
 						"value": "[parameters('OData1_properties_typeProperties_url')]"
-					},
-					"OData2_properties_typeProperties_url": {
-						"value": "[parameters('OData2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -474,8 +478,8 @@
 					"SQLaDataLake_connectionString": {
 						"value": "[parameters('SQLaDataLake_connectionString')]"
 					},
-					"limpia_connectionString": {
-						"value": "[parameters('limpia_connectionString')]"
+					"OData2_properties_typeProperties_url": {
+						"value": "[parameters('OData2_properties_typeProperties_url')]"
 					},
 					"OData3_properties_typeProperties_url": {
 						"value": "[parameters('OData3_properties_typeProperties_url')]"
@@ -547,6 +551,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"limpia_connectionString": {
+						"value": "[parameters('limpia_connectionString')]"
 					},
 					"linkedService1_connectionString": {
 						"value": "[parameters('linkedService1_connectionString')]"

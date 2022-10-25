@@ -15,9 +15,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SQLaDataLake'"
 		},
-		"limpia_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'limpia'"
+		"OData2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://services.odata.org/V2/Northwind/Northwind.svc/"
 		},
 		"OData3_properties_typeProperties_url": {
 			"type": "string",
@@ -92,6 +92,21 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/OData2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "https://ghoapi.azureedge.net/api/NCD_HYP_PREVALENCE_A",
+				"annotations": [],
+				"type": "OData",
+				"typeProperties": {
+					"url": "[parameters('OData2_properties_typeProperties_url')]",
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/OData3')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -370,19 +385,6 @@
 					"url": "[parameters('TEST_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/limpia')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('limpia_connectionString')]"
 				}
 			},
 			"dependsOn": []
