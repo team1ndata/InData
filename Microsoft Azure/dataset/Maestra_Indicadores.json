@@ -1,0 +1,21 @@
+{
+	"name": "Maestra_Indicadores",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage16",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "henrypf"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
