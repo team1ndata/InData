@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_582",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDWHENRY",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "RAW",
+			"table": "NCD_BMI_25C"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

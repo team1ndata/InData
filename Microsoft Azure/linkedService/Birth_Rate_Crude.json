@@ -1,0 +1,14 @@
+{
+	"name": "Birth_Rate_Crude",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Birth_Rate_Crude",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.CBRT.IN?format=json&per_page=16500",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

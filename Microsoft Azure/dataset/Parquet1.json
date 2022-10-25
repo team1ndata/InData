@@ -1,0 +1,87 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage10",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "_data.parquet",
+				"folderPath": "azureml/6a606c9b-bdba-4d5e-8431-36f9d48314f8/Result_dataset",
+				"container": "henrypf"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "country_value",
+				"type": "UTF8"
+			},
+			{
+				"name": "date",
+				"type": "INT64"
+			},
+			{
+				"name": "countryiso3code",
+				"type": "UTF8"
+			},
+			{
+				"name": "SP.ADO.TFRT",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.DYN.CBRT.IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH.XPD.CHEX.GD.ZS",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH.XPD.CHEX.PC.CD",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.DYN.TFRT.IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.DYN.LE00.IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.DYN.IMRT.IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.POP.GROW",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.POP.TOTL",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH.STA.SUIC.P5",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "NY.GDP.MKTP.KN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "NCD_BMI_25A",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "NCD_HYP_PREVALENCE_A",
+				"type": "DOUBLE"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,13 @@
+{
+	"name": "OData2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "https://ghoapi.azureedge.net/api/NCD_HYP_PREVALENCE_A",
+		"annotations": [],
+		"type": "OData",
+		"typeProperties": {
+			"url": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+			"authenticationType": "Anonymous"
+		}
+	}
+}

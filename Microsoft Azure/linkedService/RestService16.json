@@ -1,0 +1,13 @@
+{
+	"name": "RestService16",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.TFRT.IN?format=json&per_page=16500",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

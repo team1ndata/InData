@@ -1,0 +1,20 @@
+{
+	"name": "powerquery1",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "Maestras13",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Maestras13",
+					"dataset": {
+						"referenceName": "Maestras13",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared Maestras13 = let AdfDoc = Sql.Database(\"devserverhenrypf.database.windows.net\", \"DWAnalytics\", [CreateNavigationProperties = false]), InputTable = AdfDoc{[Schema=\"Raw\",Item=\"Maestra13series\"]}[Data] in InputTable;\r\nshared UserQuery = let Source = #\"Maestras13\",\r\n  #\"Filas filtradas\" = Table.SelectRows(Source, each ([indicator_id] = \"SP.ADO.TFRT\")),\r\n  #\"Columnas quitadas\" = Table.RemoveColumns(#\"Filas filtradas\", {\"countryiso3code\", \"indicator_value\"}) in #\"Columnas quitadas\";\r\n",
+			"documentLocale": "en-us"
+		}
+	}
+}

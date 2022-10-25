@@ -1,0 +1,13 @@
+{
+	"name": "Life_expectancy_at_birth_female",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Life_expectancy_at_birth_female",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

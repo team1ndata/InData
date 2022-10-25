@@ -1,0 +1,48 @@
+{
+	"name": "Maestras13",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Maestra13",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "indicator_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "indicator_value",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country_value",
+				"type": "nvarchar"
+			},
+			{
+				"name": "countryiso3code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "date",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "value",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "Raw",
+			"table": "Maestra13series"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

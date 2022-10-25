@@ -1,0 +1,90 @@
+{
+	"name": "DelimitedText7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage7",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Results.csv",
+				"folderPath": "UI/2022-10-19_173748_UTC",
+				"container": "azureml-blobstore-39f905b4-7060-4ac1-9ca2-174b0bbb13e2"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "country_value",
+				"type": "String"
+			},
+			{
+				"name": "date",
+				"type": "String"
+			},
+			{
+				"name": "countryiso3code",
+				"type": "String"
+			},
+			{
+				"name": "SP.ADO.TFRT",
+				"type": "String"
+			},
+			{
+				"name": "SP.DYN.CBRT.IN",
+				"type": "String"
+			},
+			{
+				"name": "SH.XPD.CHEX.GD.ZS",
+				"type": "String"
+			},
+			{
+				"name": "SH.XPD.CHEX.PC.CD",
+				"type": "String"
+			},
+			{
+				"name": "SP.DYN.TFRT.IN",
+				"type": "String"
+			},
+			{
+				"name": "SP.DYN.LE00.IN",
+				"type": "String"
+			},
+			{
+				"name": "SP.DYN.IMRT.IN",
+				"type": "String"
+			},
+			{
+				"name": "SP.POP.GROW",
+				"type": "String"
+			},
+			{
+				"name": "SP.POP.TOTL",
+				"type": "String"
+			},
+			{
+				"name": "SH.STA.SUIC.P5",
+				"type": "String"
+			},
+			{
+				"name": "NY.GDP.MKTP.KN",
+				"type": "String"
+			},
+			{
+				"name": "NCD_BMI_25A",
+				"type": "String"
+			},
+			{
+				"name": "NCD_HYP_PREVALENCE_A",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

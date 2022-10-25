@@ -1,0 +1,13 @@
+{
+	"name": "Birth_Rate_Crude",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Birth_Rate_Crude",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

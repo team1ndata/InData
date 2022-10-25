@@ -1,0 +1,13 @@
+{
+	"name": "RestResource8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestService10",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

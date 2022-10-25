@@ -1,0 +1,16 @@
+{
+	"name": "SourceDataset_582",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OData3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ODataResource",
+		"schema": [],
+		"typeProperties": {
+			"path": "NCD_BMI_25A"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,90 @@
+{
+	"name": "Parquet3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage15",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "data.dataset (1).parquet",
+				"container": "henrypf"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "country_value",
+				"type": "UTF8"
+			},
+			{
+				"name": "date",
+				"type": "INT64"
+			},
+			{
+				"name": "countryiso3code",
+				"type": "UTF8"
+			},
+			{
+				"name": "NY_GDP_MKTP_CD",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH_STA_SUIC_P5",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP_DYN_TFRT_IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP_ADO_TFRT",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP_DYN_CBRT_IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP_DYN_IMRT_IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH_XPD_CHEX_PC_CD",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH_XPD_CHEX_GD_ZS",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP_DYN_LE00_IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP_POP_GROW",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP_POP_TOTL",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "NY_GDP_PCAP_CD",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "ncd_bmi_25a",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "ncd_hyp_prevalence_a",
+				"type": "DOUBLE"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

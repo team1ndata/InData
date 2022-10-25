@@ -1,0 +1,13 @@
+{
+	"name": "Current_health_expenditure",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Current_health_expenditure",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

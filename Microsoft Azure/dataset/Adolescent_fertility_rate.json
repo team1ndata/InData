@@ -1,0 +1,13 @@
+{
+	"name": "Adolescent_fertility_rate",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Adolescent_fertility_rate",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

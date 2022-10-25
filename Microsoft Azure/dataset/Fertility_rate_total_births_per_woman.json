@@ -1,0 +1,13 @@
+{
+	"name": "Fertility_rate_total_births_per_woman",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Fertility_rate_total_births_per_woman",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

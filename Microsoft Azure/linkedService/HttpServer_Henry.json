@@ -1,0 +1,13 @@
+{
+	"name": "HttpServer_Henry",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=excel",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

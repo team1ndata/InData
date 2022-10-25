@@ -1,0 +1,16 @@
+{
+	"name": "SourceDataset_j4u",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OData3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ODataResource",
+		"schema": [],
+		"typeProperties": {
+			"path": "NCD_HYP_PREVALENCE_A"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

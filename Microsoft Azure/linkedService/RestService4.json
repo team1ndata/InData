@@ -1,0 +1,14 @@
+{
+	"name": "RestService4",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Birth rate, crude (per 1000 people)",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&per_page=16500",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

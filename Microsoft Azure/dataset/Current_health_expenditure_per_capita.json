@@ -1,0 +1,13 @@
+{
+	"name": "Current_health_expenditure_per_capita",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Current_health_expenditure_per_capita",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

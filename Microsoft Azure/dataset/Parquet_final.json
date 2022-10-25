@@ -1,0 +1,20 @@
+{
+	"name": "Parquet_final",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobParquet",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "henrypf"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

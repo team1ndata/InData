@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_j4u",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDWHENRY",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "RAW",
+			"table": "NCD_HYP_PREVALENCE_A"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

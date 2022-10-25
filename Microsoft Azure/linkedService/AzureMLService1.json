@@ -1,0 +1,14 @@
+{
+	"name": "AzureMLService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureMLService",
+		"typeProperties": {
+			"subscriptionId": "db9a7dcd-aeea-49d1-83eb-52ebd1441034",
+			"resourceGroupName": "Prueba",
+			"mlWorkspaceName": "HenryML",
+			"authentication": "MSI"
+		}
+	}
+}

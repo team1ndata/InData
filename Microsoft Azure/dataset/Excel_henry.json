@@ -1,0 +1,20 @@
+{
+	"name": "Excel_henry",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer_Henry",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Data",
+			"location": {
+				"type": "HttpServerLocation"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "henry-analytics",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b095cbb7-17c0-47ae-8452-249315cd57f1",
+		"tenantId": "1c7cee35-d402-4411-bbd7-2d813566a583"
+	}
+}

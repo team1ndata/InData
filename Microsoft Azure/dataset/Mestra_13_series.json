@@ -1,0 +1,13 @@
+{
+	"name": "Mestra_13_series",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Maestra_13_series",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
