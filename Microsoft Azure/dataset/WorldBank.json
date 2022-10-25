@@ -1,0 +1,12 @@
+{
+	"name": "WorldBank",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WorldBank_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}

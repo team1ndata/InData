@@ -1166,9 +1166,9 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE RAW. SERIESWORLDBANK",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
-						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -1178,37 +1178,21 @@
 							{
 								"source": {
 									"path": "$['indicator']['id']"
-								},
-								"sink": {
-									"name": "indicator_id",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['indicator']['value']"
-								},
-								"sink": {
-									"name": "indicator_value",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['country']['id']"
-								},
-								"sink": {
-									"name": "country_id",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['country']['value']"
-								},
-								"sink": {
-									"name": "country_value",
-									"type": "String"
 								}
 							},
 							{
@@ -1226,15 +1210,32 @@
 								},
 								"sink": {
 									"name": "date",
-									"type": "Decimal"
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
 									"path": "$['value']"
-								},
-								"sink": {
-									"name": "value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['scale']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['unit']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['obs_status']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['decimal']"
 								}
 							}
 						],
@@ -1253,7 +1254,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"vEsquema": "raw",
-							"vTabla": "SERIESWORLDBANK1"
+							"vTabla": "SERIESWORLDBANK"
 						}
 					}
 				]
