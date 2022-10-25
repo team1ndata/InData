@@ -17,8 +17,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "@vEsquema",
-			"table": "@vTabla"
+			"schema": "@vEsquema.()",
+			"table": "@vTabla.()"
 		}
 	}
 }
