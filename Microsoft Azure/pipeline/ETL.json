@@ -797,6 +797,53 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Machine Learning Execute Pipeline1",
+				"type": "AzureMLExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "SQL a Data Lake",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "AzureMLService1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Machine Learning Execute Pipeline1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"enableStaging": false
+				}
 			}
 		],
 		"annotations": []
