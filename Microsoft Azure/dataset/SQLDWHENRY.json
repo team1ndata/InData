@@ -17,8 +17,14 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "@dataset(). vEsquema",
-			"table": "@dataset().vTabla"
+			"schema": {
+				"value": "@dataset().vEsquema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().vTabla",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
