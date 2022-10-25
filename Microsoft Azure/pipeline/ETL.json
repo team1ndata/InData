@@ -707,6 +707,96 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Procedimiento_Almacenado",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy data OMS_2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Transformation_Load]"
+				},
+				"linkedServiceName": {
+					"referenceName": "SQLDWHENRY",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "SQL a Data Lake",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Procedimiento_Almacenado",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SQLDWHENRY",
+						"type": "DatasetReference",
+						"parameters": {
+							"vEsquema": "DWH",
+							"vTabla": "Maestra_Indicadores"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Maestra_Indicadores",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
