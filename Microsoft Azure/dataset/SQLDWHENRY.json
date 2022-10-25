@@ -17,8 +17,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "DWH",
-			"table": "Maestra_Cleansed"
+			"schema": "",
+			"table": ""
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

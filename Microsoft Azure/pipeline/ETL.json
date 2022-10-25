@@ -37,32 +37,6 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['per_page']"
-								},
-								"sink": {
-									"name": "per_page"
-								}
-							},
-							{
-								"source": {
-									"path": "$['indicator']['id']"
-								},
-								"sink": {
-									"name": "indicator_id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['indicator']['value']"
-								},
-								"sink": {
-									"name": "indicator_value",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "$['country']['id']"
 								},
 								"sink": {
@@ -94,7 +68,7 @@
 								},
 								"sink": {
 									"name": "date",
-									"type": "Decimal"
+									"type": "Int16"
 								}
 							},
 							{
@@ -103,7 +77,7 @@
 								},
 								"sink": {
 									"name": "value",
-									"type": "Decimal"
+									"type": "Double"
 								}
 							}
 						],
@@ -121,7 +95,7 @@
 						"referenceName": "SQL_Azure",
 						"type": "DatasetReference",
 						"parameters": {
-							"vEsquema": "Raw",
+							"vEsquema": "RAW",
 							"vTabla": "WorldBankData"
 						}
 					}
