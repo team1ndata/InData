@@ -31,7 +31,84 @@
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['per_page']"
+								},
+								"sink": {
+									"name": "per_page"
+								}
+							},
+							{
+								"source": {
+									"path": "$['indicator']['id']"
+								},
+								"sink": {
+									"name": "indicator_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['indicator']['value']"
+								},
+								"sink": {
+									"name": "indicator_value",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['country']['id']"
+								},
+								"sink": {
+									"name": "country_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['country']['value']"
+								},
+								"sink": {
+									"name": "country_value",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['countryiso3code']"
+								},
+								"sink": {
+									"name": "countryiso3code",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['date']"
+								},
+								"sink": {
+									"name": "date",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']"
+								},
+								"sink": {
+									"name": "value",
+									"type": "Decimal"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
 				},
 				"inputs": [
 					{
