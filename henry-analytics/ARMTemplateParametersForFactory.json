@@ -1,0 +1,207 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "henry-analytics"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage10_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage11_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage12_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage13_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage14_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage15_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage5_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage6_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage7_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage8_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage9_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_connectionString": {
+			"value": ""
+		},
+		"BlobParquet_connectionString": {
+			"value": ""
+		},
+		"Destino_sqldw_connectionString": {
+			"value": ""
+		},
+		"HenryML_connectionString": {
+			"value": ""
+		},
+		"LifeExp_connectionString": {
+			"value": ""
+		},
+		"LifeExpectancy_connectionString": {
+			"value": ""
+		},
+		"Maestra13_connectionString": {
+			"value": ""
+		},
+		"SQLDWHENRY_connectionString": {
+			"value": ""
+		},
+		"SQLaDataLake_connectionString": {
+			"value": ""
+		},
+		"limpia_connectionString": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"sqldw_henrypf_connectionString": {
+			"value": ""
+		},
+		"Adolescent_fertility_rate_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.ADO.TFRT?format=json&per_page=16500"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://storagehenrypf.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://storagehenrypf.dfs.core.windows.net/"
+		},
+		"AzureMLService1_properties_typeProperties_subscriptionId": {
+			"value": "db9a7dcd-aeea-49d1-83eb-52ebd1441034"
+		},
+		"AzureMLService1_properties_typeProperties_resourceGroupName": {
+			"value": "Prueba"
+		},
+		"AzureMLService1_properties_typeProperties_mlWorkspaceName": {
+			"value": "HenryML"
+		},
+		"Birth_Rate_Crude_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.CBRT.IN?format=json&per_page=16500"
+		},
+		"Current_health_expenditure_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=16500"
+		},
+		"Current_health_expenditure_per_capita_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SH.XPD.CHEX.PC.CD?format=json&per_page=16500"
+		},
+		"Fertility_rate_total_births_per_woman_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.TFRT.IN?format=json&per_page=16500"
+		},
+		"GHO1_properties_typeProperties_url": {
+			"value": "https://ghoapi.azureedge.net/api/NCD_BMI_25C"
+		},
+		"HttpServer3_properties_typeProperties_url": {
+			"value": "https://datasets.iisg.amsterdam/api/access/datafile/181?gbrecs=true"
+		},
+		"HttpServer4_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/V2/incomeLevel/LIC/country"
+		},
+		"HttpServer_Henry_properties_typeProperties_url": {
+			"value": "https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=excel"
+		},
+		"Life_expectancy_at_birth_female_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.FE.IN?format=json&per_page=16500"
+		},
+		"Maestra_13_series_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ng;et;eg;cd;tz;de;za;it;es;pl;fr;in;pk;bd;af;np;id;usa;cn;ru;gb;au;ro;lk/indicator/SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;NY.GDP.MKTP.CD;NY.GDP.PCAP.CD?&source=2&format=json&per_page=23000"
+		},
+		"OData1_properties_typeProperties_url": {
+			"value": "https://ghoapi.azureedge.net/api/WHOSIS_000001"
+		},
+		"OData2_properties_typeProperties_url": {
+			"value": "https://services.odata.org/V2/Northwind/Northwind.svc/"
+		},
+		"OData3_properties_typeProperties_url": {
+			"value": "https://ghoapi.azureedge.net/api"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://databank.worldbank.org/AjaxDownload/FileDownloadHandler.ashx?filename=8773e578-95c3-40b4-ab6c-04f5d3974e9c.xlsx&filetype=EXCEL&language=en&displayfile=Data_Extract_From_World_Development_Indicators.xlsx"
+		},
+		"RestService10_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=16500"
+		},
+		"RestService11_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.CDRT.IN?format=json&per_page=16500"
+		},
+		"RestService12_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.TFRT.IN?format=json&per_page=16500"
+		},
+		"RestService13_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.POP.GROW?format=json&per_page=16500"
+		},
+		"RestService14_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=16500"
+		},
+		"RestService15_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.ADO.TFRT?format=json&per_page=16500"
+		},
+		"RestService16_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.TFRT.IN?format=json&per_page=16500"
+		},
+		"RestService3_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json"
+		},
+		"RestService4_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&per_page=16500"
+		},
+		"RestService5_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.ADO.TFRT?format=json&per_page=16500"
+		},
+		"RestService6_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.CBRT.IN?format=json&per_page=16500"
+		},
+		"RestService7_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SH.STA.BRTC.ZS?format=json&per_page=16500"
+		},
+		"RestService8_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SH.XPD.KHEX.GD.ZS?format=json&per_page=16500"
+		},
+		"RestService9_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/all/indicator/SH.DTH.COMM.ZS?format=json&per_page=16500"
+		},
+		"TEST_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ne;et;eg;cd;tz;za;mt;se;it;es;pl;fr;in;pk;bd;af;np;sk;id;usa;cn/indicator/SH.XPD.CHEX.PC.CD;SH.XPD.CHEX.GD.ZS;SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.CDRT.IN;NY.GDP.MKTP.KD;NY.GDP.MKTP.KN;SH.STA.TRAF.P5?&source=2&format=json&per_page=30132"
+		}
+	}
+}

@@ -1,0 +1,1437 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "henry-analytics"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService4",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource20')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService16",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService4",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService14",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService13",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService12",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource8')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService10",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource9')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService9",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SQLDWHENRY')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "sqldw_henrypf",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"vEsquema": {
+						"type": "string"
+					},
+					"vTabla": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "DWH",
+					"table": "Maestra_Cleansed"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_582')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OData3",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "ODataResource",
+				"schema": [],
+				"typeProperties": {
+					"path": "NCD_BMI_25A"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_j4u')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OData3",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "ODataResource",
+				"schema": [],
+				"typeProperties": {
+					"path": "NCD_HYP_PREVALENCE_A"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TEST')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "TEST",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "SQLDWHENRY",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference"
+							},
+							"name": "sink1",
+							"rejectedDataLinkedService": {
+								"referenceName": "linkedService1",
+								"type": "LinkedServiceReference"
+							}
+						}
+					],
+					"transformations": [],
+					"scriptLines": [
+						"parameters{",
+						"     parameter1 as string ('indicator_id')",
+						"}",
+						"source(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     enableCdc: true,",
+						"     mode: 'read',",
+						"     skipInitialLoad: true,",
+						"     waterMarkColumn: 'date,countryiso3code',",
+						"     isolationLevel: 'READ_UNCOMMITTED',",
+						"     format: 'table') ~> source1",
+						"source1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SQLDWHENRY')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/powerquery1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "WranglingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"name": "Maestras13",
+							"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Maestras13",
+							"dataset": {
+								"referenceName": "Maestras13",
+								"type": "DatasetReference"
+							}
+						}
+					],
+					"script": "section Section1;\r\nshared Maestras13 = let AdfDoc = Sql.Database(\"devserverhenrypf.database.windows.net\", \"DWAnalytics\", [CreateNavigationProperties = false]), InputTable = AdfDoc{[Schema=\"Raw\",Item=\"Maestra13series\"]}[Data] in InputTable;\r\nshared UserQuery = let Source = #\"Maestras13\",\r\n  #\"Filas filtradas\" = Table.SelectRows(Source, each ([indicator_id] = \"SP.ADO.TFRT\")),\r\n  #\"Columnas quitadas\" = Table.RemoveColumns(#\"Filas filtradas\", {\"countryiso3code\", \"indicator_value\"}) in #\"Columnas quitadas\";\r\n",
+					"documentLocale": "en-us"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DataSource')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "NCD_BMI_25C",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "NCD_HYP_PREVALENCE_A",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "NCD_BMI_25C"
+							},
+							{
+								"name": "Destination",
+								"value": "RAW.NCD_BMI_25C"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "ODataSource"
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE TABLE RAW. NCD_BMI_25C",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"validateDataConsistency": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Id",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "Id",
+											"type": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "IndicatorCode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "IndicatorCode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "SpatialDimType",
+											"type": "String"
+										},
+										"sink": {
+											"name": "SpatialDimType",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "SpatialDim",
+											"type": "String"
+										},
+										"sink": {
+											"name": "SpatialDim",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimType",
+											"type": "String"
+										},
+										"sink": {
+											"name": "TimeDimType",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDim",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "TimeDim",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim1Type",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim1Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim1",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim1",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim2Type",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim2Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim3Type",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim3Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim3",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DataSourceDimType",
+											"type": "String"
+										},
+										"sink": {
+											"name": "DataSourceDimType",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DataSourceDim",
+											"type": "String"
+										},
+										"sink": {
+											"name": "DataSourceDim",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Value",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Value",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "NumericValue",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "NumericValue",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "Low",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Low",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "High",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "High",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "Comments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Date",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "Date",
+											"type": "DateTimeOffset"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionValue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "TimeDimensionValue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionBegin",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "TimeDimensionBegin",
+											"type": "DateTimeOffset"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionEnd",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "TimeDimensionEnd",
+											"type": "DateTimeOffset"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceDataset_582",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDWHENRY",
+								"type": "DatasetReference",
+								"parameters": {
+									"vEsquema": "RAW",
+									"vTabla": "NCD_BMI_25C"
+								}
+							}
+						]
+					},
+					{
+						"name": "NCD_HYP_PREVALENCE_A",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy SERIESWORLDBANK",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "NCD_HYP_PREVALENCE_A"
+							},
+							{
+								"name": "Destination",
+								"value": "RAW.NCD_HYP_PREVALENCE_A"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "ODataSource"
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE TABLE RAW. NCD_HYP_PREVALENCE_A",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"validateDataConsistency": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Id",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "Id",
+											"type": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "IndicatorCode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "IndicatorCode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "SpatialDimType",
+											"type": "String"
+										},
+										"sink": {
+											"name": "SpatialDimType",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "SpatialDim",
+											"type": "String"
+										},
+										"sink": {
+											"name": "SpatialDim",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimType",
+											"type": "String"
+										},
+										"sink": {
+											"name": "TimeDimType",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDim",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "TimeDim",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim1Type",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim1Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim1",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim1",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim2Type",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim2Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim3Type",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim3Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim3",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DataSourceDimType",
+											"type": "String"
+										},
+										"sink": {
+											"name": "DataSourceDimType",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DataSourceDim",
+											"type": "String"
+										},
+										"sink": {
+											"name": "DataSourceDim",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Value",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Value",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "NumericValue",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "NumericValue",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "Low",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Low",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "High",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "High",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "Comments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Date",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "Date",
+											"type": "DateTimeOffset"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionValue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "TimeDimensionValue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionBegin",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "TimeDimensionBegin",
+											"type": "DateTimeOffset"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionEnd",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "TimeDimensionEnd",
+											"type": "DateTimeOffset"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceDataset_j4u",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDWHENRY",
+								"type": "DatasetReference",
+								"parameters": {
+									"vEsquema": "RAW",
+									"vTabla": "NCD_HYP_PREVALENCE_A"
+								}
+							}
+						]
+					},
+					{
+						"name": "Copy SERIESWORLDBANK",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 1,
+							"retryIntervalInSeconds": 120,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE TABLE raw.SERIESWORLDBANK",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['indicator']['id']"
+										},
+										"sink": {
+											"name": "indicator_id",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['indicator']['value']"
+										},
+										"sink": {
+											"name": "indicator_value",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['country']['id']"
+										},
+										"sink": {
+											"name": "country_id",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['country']['value']"
+										},
+										"sink": {
+											"name": "country_value",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['countryiso3code']"
+										},
+										"sink": {
+											"name": "countryiso3code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['date']"
+										},
+										"sink": {
+											"name": "date",
+											"type": "Double"
+										}
+									},
+									{
+										"source": {
+											"path": "$['value']"
+										},
+										"sink": {
+											"name": "value",
+											"type": "Double"
+										}
+									}
+								],
+								"collectionReference": ""
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Mestra_13_series",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDWHENRY",
+								"type": "DatasetReference",
+								"parameters": {
+									"vEsquema": "raw",
+									"vTabla": "SERIESWORLDBANK"
+								}
+							}
+						]
+					},
+					{
+						"name": "Transformacion_Load",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "NCD_BMI_25C",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[Transformation_Load]"
+						},
+						"linkedServiceName": {
+							"referenceName": "SQLDWHENRY",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "Copy data Cleansed to SQL",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Machine Learning Execute Pipeline1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ParquetSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "country_value",
+											"type": "String",
+											"physicalType": "UTF8"
+										},
+										"sink": {
+											"name": "country_value",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "date",
+											"type": "Int64",
+											"physicalType": "INT64"
+										},
+										"sink": {
+											"name": "date",
+											"type": "Int64",
+											"physicalType": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "countryiso3code",
+											"type": "String",
+											"physicalType": "UTF8"
+										},
+										"sink": {
+											"name": "countryiso3code",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "NY_GDP_MKTP_CD",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "NY_GDP_MKTP_CD",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SH_STA_SUIC_P5",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SH_STA_SUIC_P5",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SP_DYN_TFRT_IN",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SP_DYN_TFRT_IN",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SP_ADO_TFRT",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SP_ADO_TFRT",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SP_DYN_CBRT_IN",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SP_DYN_CBRT_IN",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SP_DYN_IMRT_IN",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SP_DYN_IMRT_IN",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SH_XPD_CHEX_PC_CD",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SH_XPD_CHEX_PC_CD",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SH_XPD_CHEX_GD_ZS",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SH_XPD_CHEX_GD_ZS",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SP_DYN_LE00_IN",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SP_DYN_LE00_IN",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SP_POP_GROW",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SP_POP_GROW",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "SP_POP_TOTL",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "SP_POP_TOTL",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "NY_GDP_PCAP_CD",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "NY_GDP_PCAP_CD",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "ncd_bmi_25a",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "ncd_bmi_25a",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "ncd_hyp_prevalence_a",
+											"type": "Double",
+											"physicalType": "DOUBLE"
+										},
+										"sink": {
+											"name": "ncd_hyp_prevalence_a",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Parquet3",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDWHENRY",
+								"type": "DatasetReference",
+								"parameters": {
+									"vEsquema": "raw",
+									"vTabla": "Maestra_Cleansed"
+								}
+							}
+						]
+					},
+					{
+						"name": "Machine Learning Execute Pipeline1",
+						"type": "AzureMLExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "Transformacion_Load",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"mlPipelineId": "bcbf25fe-c880-47d4-bae2-1b9c32d454d1"
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureMLService1",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "Data flow Incremental Load",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [
+							{
+								"activity": "Copy data Cleansed to SQL",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflow1",
+								"type": "DataFlowReference",
+								"parameters": {
+									"parameter1": "'indicator_id'"
+								},
+								"datasetParameters": {
+									"source1": {
+										"vEsquema": "DWH",
+										"vTabla": "Mestra_Cleansed"
+									},
+									"sink1": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine",
+							"continuationSettings": {
+								"customizedCheckpointKey": "787ddb09-a3f6-41f5-9376-0a9c993b71ba"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2022-10-21T14:15:56Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_582')]",
+				"[concat(variables('factoryId'), '/datasets/SQLDWHENRY')]",
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_j4u')]",
+				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Frecuencia_de_Actualizacion')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "DataSource",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Month",
+						"interval": 12,
+						"startTime": "2023-01-01T00:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"monthDays": [
+								1
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/DataSource')]"
+			]
+		}
+	]
+}

@@ -1,0 +1,897 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "henry-analytics"
+		},
+		"linkedService1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
+		},
+		"sqldw_henrypf_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sqldw_henrypf'"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/linkedService1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('linkedService1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/sqldw_henrypf')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('sqldw_henrypf_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime2')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Adolescent_fertility_rate')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Adolescent_fertility_rate",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase3",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dwh",
+					"table": "Incremental_Load"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Birth_Rate_Crude')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Birth_Rate_Crude",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Current_health_expenditure')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Current_health_expenditure",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Current_health_expenditure_per_capita')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Current_health_expenditure_per_capita",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Datasettoclean')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SQLaDataLake",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "henrypf"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "HttpServer4",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "AFR4.csv",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "date",
+						"type": "String"
+					},
+					{
+						"name": "countryiso3code",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.PC.CD",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.GD.ZS",
+						"type": "String"
+					},
+					{
+						"name": "SP.ADO.TFRT",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.GROW",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.TOTL",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.CBRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.TFRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.LE00.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.IMRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SH.STA.SUIC.P5",
+						"type": "String"
+					},
+					{
+						"name": "NCD_BMI_25A",
+						"type": "String"
+					},
+					{
+						"name": "NY.GDP.MKTP.KN",
+						"type": "String"
+					},
+					{
+						"name": "NCD_HYP_PREVALENCE_A",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage3",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "CLA4.csv",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage4",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "WLD4.csv",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "date",
+						"type": "String"
+					},
+					{
+						"name": "countryiso3code",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.PC.CD",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.GD.ZS",
+						"type": "String"
+					},
+					{
+						"name": "SP.ADO.TFRT",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.GROW",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.TOTL",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.CBRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.TFRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.LE00.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.IMRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SH.STA.SUIC.P5",
+						"type": "String"
+					},
+					{
+						"name": "NCD_BMI_25A",
+						"type": "String"
+					},
+					{
+						"name": "NY.GDP.MKTP.KN",
+						"type": "String"
+					},
+					{
+						"name": "NCD_HYP_PREVALENCE_A",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage5",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "SAS4.csv",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "date",
+						"type": "String"
+					},
+					{
+						"name": "countryiso3code",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.PC.CD",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.GD.ZS",
+						"type": "String"
+					},
+					{
+						"name": "SP.ADO.TFRT",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.GROW",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.TOTL",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.CBRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.TFRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.LE00.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.IMRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SH.STA.SUIC.P5",
+						"type": "String"
+					},
+					{
+						"name": "NCD_BMI_25A",
+						"type": "String"
+					},
+					{
+						"name": "NY.GDP.MKTP.KN",
+						"type": "String"
+					},
+					{
+						"name": "NCD_HYP_PREVALENCE_A",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage6",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "EUU4.csv",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "date",
+						"type": "String"
+					},
+					{
+						"name": "countryiso3code",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.PC.CD",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.GD.ZS",
+						"type": "String"
+					},
+					{
+						"name": "SP.ADO.TFRT",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.GROW",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.TOTL",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.CBRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.TFRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.LE00.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.IMRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SH.STA.SUIC.P5",
+						"type": "String"
+					},
+					{
+						"name": "NCD_BMI_25A",
+						"type": "String"
+					},
+					{
+						"name": "NY.GDP.MKTP.KN",
+						"type": "String"
+					},
+					{
+						"name": "NCD_HYP_PREVALENCE_A",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage7",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Results.csv",
+						"folderPath": "UI/2022-10-19_173748_UTC",
+						"container": "azureml-blobstore-39f905b4-7060-4ac1-9ca2-174b0bbb13e2"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "country_value",
+						"type": "String"
+					},
+					{
+						"name": "date",
+						"type": "String"
+					},
+					{
+						"name": "countryiso3code",
+						"type": "String"
+					},
+					{
+						"name": "SP.ADO.TFRT",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.CBRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.GD.ZS",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.PC.CD",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.TFRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.LE00.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.IMRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.GROW",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.TOTL",
+						"type": "String"
+					},
+					{
+						"name": "SH.STA.SUIC.P5",
+						"type": "String"
+					},
+					{
+						"name": "NY.GDP.MKTP.KN",
+						"type": "String"
+					},
+					{
+						"name": "NCD_BMI_25A",
+						"type": "String"
+					},
+					{
+						"name": "NCD_HYP_PREVALENCE_A",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText8')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage9",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "date",
+						"type": "String"
+					},
+					{
+						"name": "countryiso3code",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.PC.CD",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.GD.ZS",
+						"type": "String"
+					},
+					{
+						"name": "SP.ADO.TFRT",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.GROW",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.TOTL",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.CBRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.TFRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.LE00.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.IMRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SH.STA.SUIC.P5",
+						"type": "String"
+					},
+					{
+						"name": "NCD_BMI_25A",
+						"type": "String"
+					},
+					{
+						"name": "NY.GDP.MKTP.KN",
+						"type": "String"
+					},
+					{
+						"name": "NCD_HYP_PREVALENCE_A",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText9')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage13",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_582')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SQLDWHENRY",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "RAW",
+					"table": "NCD_BMI_25C"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
