@@ -104,6 +104,277 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Data Cleansed a SQL",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "SQL a Storage",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "country_value",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "country_value",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "countryiso3code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "countryiso3code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NY.GDP.MKTP.CD",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NY.GDP.MKTP.CD",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SH.STA.SUIC.P5",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SH.STA.SUIC.P5",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SP.DYN.TFRT.IN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SP.DYN.TFRT.IN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SP.ADO.TFRT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SP.ADO.TFRT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SP.DYN.CBRT.IN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SP.DYN.CBRT.IN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SP.DYN.IMRT.IN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SP.DYN.IMRT.IN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SH.XPD.CHEX.PC.CD",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SH.XPD.CHEX.PC.CD",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SH.XPD.CHEX.GD.ZS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SH.XPD.CHEX.GD.ZS",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SP.DYN.LE00.IN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SP.DYN.LE00.IN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SP.POP.GROW",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SP.POP.GROW",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SP.POP.TOTL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SP.POP.TOTL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NY.GDP.PCAP.CD",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NY.GDP.PCAP.CD",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ncd_hyp_prevalence_a",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ncd_hyp_prevalence_a",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ncd_bmi_25a",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ncd_bmi_25a",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CSV_Data_Cleansed",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLDWHENRY",
+						"type": "DatasetReference",
+						"parameters": {
+							"vEsquema": "DWH",
+							"vTabla": "Data_Cleansed"
+						}
+					}
+				]
 			}
 		],
 		"annotations": []
