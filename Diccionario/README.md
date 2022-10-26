@@ -2,13 +2,13 @@
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=50000&color=6C29F7&width=500&lines=D+i+c+c+i+o+n+a+r+i+o)](https://git.io/typing-svg)
 
 
-#### A continuacion se mostraran  terminos  y referencias dentro de los datos para su mejor entendimiento :
+#### A continuación se mostrarán términos y referencias dentro de los datos para su mejor entendimiento :
 # 
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Rye&pause=100000&color=F7F7F7&width=455&lines=SP.ADO.TFRT)](https://git.io/typing-svg)
 - Adolescent fertility rate (births per 1,000 women ages 15-19)
 #
-###### Tasa de fecundidad adolescente (nacimientos por cada 1000 mujeres de 15 a 19 años)
+###### Tasa de fertilidad adolescente (nacimientos por cada 1000 mujeres de 15 a 19 años)
 #
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Rye&pause=100000&color=F7F7F7&width=455&lines=SP.DYN.CBRT.IN)](https://git.io/typing-svg)
 - Birth rate, crude (per 1000 people)
@@ -18,17 +18,17 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Rye&pause=100000&color=F7F7F7&width=455&lines=SH.XPD.CHEX.GD.ZS)](https://git.io/typing-svg)
 - Current health expenditure (% of GDP)
 #
-###### Gasto sanitario actual (% del PIB)
+###### Gasto en salud actual (% del PIB)
 #
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Rye&pause=100000&color=F7F7F7&width=455&lines=SH.XPD.CHEX.PC.CD)](https://git.io/typing-svg)
 - Current health expenditure per capita (current US$)
 #
-###### Gasto corriente en salud per cápita
+###### Gasto actual en salud per cápita
 #
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Rye&pause=100000&color=F7F7F7&width=455&lines=SP.DYN.TFRT.IN)](https://git.io/typing-svg)
 - Fertility rate, total (births per woman)
 #
-###### Tasa de fecundidad, total (nacimientos por mujer)
+###### Tasa de fertilidad, total (nacimientos por mujer)
 #
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Rye&pause=100000&color=F7F7F7&width=455&lines=SP.DYN.LE00.IN)](https://git.io/typing-svg)
 - Life expectancy at birth, total (years)
