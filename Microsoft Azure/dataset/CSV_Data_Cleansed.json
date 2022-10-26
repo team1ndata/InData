@@ -10,19 +10,15 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "dataset_filled.csv",
+				"fileName": "dataset_cleansed.csv",
 				"container": "henrypf"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
-			{
-				"name": "Prop_0",
-				"type": "String"
-			},
 			{
 				"name": "NY.GDP.MKTP.CD",
 				"type": "String"
