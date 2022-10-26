@@ -5,7 +5,14 @@
 			{
 				"name": "Execute API DATA",
 				"type": "ExecutePipeline",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Data Cleansed a SQL",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
@@ -108,14 +115,7 @@
 			{
 				"name": "Data Cleansed a SQL",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "SQL a Storage",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -149,36 +149,12 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "country_value",
+									"name": "Prop_0",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "country_value",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "date",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "date",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "countryiso3code",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "countryiso3code",
+									"name": "Prop_0",
 									"type": "String",
 									"physicalType": "String"
 								}
@@ -329,6 +305,18 @@
 							},
 							{
 								"source": {
+									"name": "ncd_bmi_25a",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ncd_bmi_25a",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "ncd_hyp_prevalence_a",
 									"type": "String",
 									"physicalType": "String"
@@ -341,12 +329,36 @@
 							},
 							{
 								"source": {
-									"name": "ncd_bmi_25a",
+									"name": "country_value",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ncd_bmi_25a",
+									"name": "country_value",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "countryiso3code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "countryiso3code",
 									"type": "String",
 									"physicalType": "String"
 								}
