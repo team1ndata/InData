@@ -1,3 +1,4 @@
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&width=435&lines=DATA+ANALYSIS)](https://git.io/typing-svg)
 
 ## Información a analizar
 
@@ -51,21 +52,21 @@ Se realizaron los siguientes pasos para disponibilizar la información en el pro
 - Anulación de la dinamización de las columnas correspondientes a las series en la tabla XXX e inclusión de la información de región.
 - Verificación del modelo relacional
 
-![1666756143556](image/README/1666756143556.png)
+![image](https://user-images.githubusercontent.com/106342923/197958430-6b87000f-c041-40c0-942f-4185781e76ab.png)
 
 Una vez realizados los anteriores pasos, se elaboró el Dashboard para el análisis de la información. Este consta de una portada con vínculos a las demás páginas, una página denominada "Principal" en donde se puede explorar la data de todas las regiones y 5 hojas más correspondientes a las diferentes regiones definidas para el análisis.
 
 - Portada
 
-![1666766441753](image/README/1666766441753.png)
+![image](https://user-images.githubusercontent.com/106342923/197958515-b0762ded-1b1a-414e-9669-15fb5e8caf45.png)
 
 - Principal
 
-![1666767611685](image/README/1666767611685.png)
+![image](https://user-images.githubusercontent.com/106342923/197958610-fb4d7610-696c-4551-9eae-c67168b93ca3.png)
 
 - Región
 
-![1666767718339](image/README/1666767718339.png)
+![image](https://user-images.githubusercontent.com/106342923/197958687-41402d77-f466-4e0b-a4a9-6baf4fbf1f53.png)
 
 ## Análisis
 
