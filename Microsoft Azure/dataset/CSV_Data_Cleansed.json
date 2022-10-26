@@ -20,57 +20,75 @@
 		},
 		"schema": [
 			{
+				"name": "Prop_0",
 				"type": "String"
 			},
 			{
+				"name": "NY.GDP.MKTP.CD",
 				"type": "String"
 			},
 			{
+				"name": "SH.STA.SUIC.P5",
 				"type": "String"
 			},
 			{
+				"name": "SP.DYN.TFRT.IN",
 				"type": "String"
 			},
 			{
+				"name": "SP.ADO.TFRT",
 				"type": "String"
 			},
 			{
+				"name": "SP.DYN.CBRT.IN",
 				"type": "String"
 			},
 			{
+				"name": "SP.DYN.IMRT.IN",
 				"type": "String"
 			},
 			{
+				"name": "SH.XPD.CHEX.PC.CD",
 				"type": "String"
 			},
 			{
+				"name": "SH.XPD.CHEX.GD.ZS",
 				"type": "String"
 			},
 			{
+				"name": "SP.DYN.LE00.IN",
 				"type": "String"
 			},
 			{
+				"name": "SP.POP.GROW",
 				"type": "String"
 			},
 			{
+				"name": "SP.POP.TOTL",
 				"type": "String"
 			},
 			{
+				"name": "NY.GDP.PCAP.CD",
 				"type": "String"
 			},
 			{
+				"name": "ncd_bmi_25a",
 				"type": "String"
 			},
 			{
+				"name": "ncd_hyp_prevalence_a",
 				"type": "String"
 			},
 			{
+				"name": "country_value",
 				"type": "String"
 			},
 			{
+				"name": "date",
 				"type": "String"
 			},
 			{
+				"name": "countryiso3code",
 				"type": "String"
 			}
 		]

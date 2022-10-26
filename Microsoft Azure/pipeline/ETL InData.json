@@ -123,7 +123,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "henrypf//dataset_filled.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "@{'DWH'}.@{'Data_Cleansed'}"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
