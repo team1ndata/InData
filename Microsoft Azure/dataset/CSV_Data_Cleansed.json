@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "df_final.csv",
+				"fileName": "df_final_MICE.csv",
 				"container": "henrypf"
 			},
 			"columnDelimiter": ",",

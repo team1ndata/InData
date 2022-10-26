@@ -16,7 +16,7 @@
 				}
 			},
 			{
-				"name": "Procedimiento Almacenado",
+				"name": "Consolidacion_Procedimiento Almacenado",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
@@ -47,7 +47,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Procedimiento Almacenado",
+						"activity": "Consolidacion_Procedimiento Almacenado",
 						"dependencyConditions": [
 							"Succeeded"
 						]
