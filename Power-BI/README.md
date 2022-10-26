@@ -52,7 +52,7 @@ Se realizaron los siguientes pasos para disponibilizar la información en el pro
 - Anulación de la dinamización de las columnas correspondientes a las series en la tabla XXX e inclusión de la información de región.
 - Verificación del modelo relacional
 
-![image](https://user-images.githubusercontent.com/106342923/197958430-6b87000f-c041-40c0-942f-4185781e76ab.png)
+![image](https://user-images.githubusercontent.com/106342923/198086094-45f99d5d-70db-409d-b714-4feb021ad804.png)
 
 Una vez realizados los anteriores pasos, se elaboró el Dashboard para el análisis de la información. Este consta de una portada con vínculos a las demás páginas, una página denominada "Principal" en donde se puede explorar la data de todas las regiones y 5 hojas más correspondientes a las diferentes regiones definidas para el análisis.
 
