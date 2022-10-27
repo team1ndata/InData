@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=40&pause=900&width=435&lines=DATA+ANALYTICS)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&pause=900&width=435&lines=DATA+ANALYTICS)](https://git.io/typing-svg)
 
 ## Información a analizar
 
