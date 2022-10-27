@@ -7,6 +7,22 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "henry-analytics"
 		},
+		"AzureBlobStorage8_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage8'"
+		},
+		"AzureBlobStorage9_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage9'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
@@ -18,6 +34,10 @@
 		"AzureSqlDatabase3_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase3'"
+		},
+		"Azure_SQL_Linked_Service_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Azure_SQL_Linked_Service'"
 		},
 		"BlobParquet_connectionString": {
 			"type": "secureString",
@@ -31,17 +51,29 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'HenryML'"
 		},
-		"LifeExp_connectionString": {
+		"HttpServer5_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LifeExp'"
+			"metadata": "Secure string for 'password' of 'HttpServer5'"
 		},
-		"LifeExpectancy_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LifeExpectancy'"
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagehenrypf.dfs.core.windows.net/"
 		},
-		"Maestra13_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Maestra13'"
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagehenrypf.dfs.core.windows.net/"
+		},
+		"AzureMLService1_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "db9a7dcd-aeea-49d1-83eb-52ebd1441034"
+		},
+		"AzureMLService1_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "Prueba"
+		},
+		"AzureMLService1_properties_typeProperties_mlWorkspaceName": {
+			"type": "string",
+			"defaultValue": "HenryML"
 		},
 		"Birth_Rate_Crude_properties_typeProperties_url": {
 			"type": "string",
@@ -71,27 +103,95 @@
 			"type": "string",
 			"defaultValue": "http://api.worldbank.org/V2/incomeLevel/LIC/country"
 		},
-		"HttpServer_Henry_properties_typeProperties_url": {
+		"HttpServer5_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=excel"
+			"defaultValue": "https://ml.azure.com/fileexplorerAzNB?wsid=/subscriptions/db9a7dcd-aeea-49d1-83eb-52ebd1441034/resourcegroups/Prueba/providers/Microsoft.MachineLearningServices/workspaces/HenryML&tid=1c7cee35-d402-4411-bbd7-2d813566a583&activeFilePath=Users/CAESARCAPO/dataset_filled.csv"
 		},
-		"Life_expectancy_at_birth_female_properties_typeProperties_url": {
+		"HttpServer5_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.FE.IN?format=json&per_page=16500"
-		},
-		"Maestra_13_series_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ng;et;eg;cd;tz;de;za;it;es;pl;fr;in;pk;bd;af;np;id;usa;cn;ru;gb;au;ro;lk/indicator/SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;NY.GDP.MKTP.CD;NY.GDP.PCAP.CD?&source=2&format=json&per_page=23000"
-		},
-		"OData1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://ghoapi.azureedge.net/api/WHOSIS_000001"
+			"defaultValue": "caesarcapo"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage8')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage8_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage9')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage9_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureMLService1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureMLService",
+				"typeProperties": {
+					"subscriptionId": "[parameters('AzureMLService1_properties_typeProperties_subscriptionId')]",
+					"resourceGroupName": "[parameters('AzureMLService1_properties_typeProperties_resourceGroupName')]",
+					"mlWorkspaceName": "[parameters('AzureMLService1_properties_typeProperties_mlWorkspaceName')]",
+					"authentication": "MSI"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -128,6 +228,19 @@
 				"type": "AzureSqlDatabase",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureSqlDatabase3_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Azure_SQL_Linked_Service')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('Azure_SQL_Linked_Service_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -280,101 +393,21 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/HttpServer_Henry')]",
+			"name": "[concat(parameters('factoryName'), '/HttpServer5')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "HttpServer",
 				"typeProperties": {
-					"url": "[parameters('HttpServer_Henry_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": false,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LifeExp')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('LifeExp_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LifeExpectancy')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('LifeExpectancy_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Life_expectancy_at_birth_female')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Life_expectancy_at_birth_female",
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('Life_expectancy_at_birth_female_properties_typeProperties_url')]",
+					"url": "[parameters('HttpServer5_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Maestra13')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('Maestra13_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Maestra_13_series')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "M",
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('Maestra_13_series_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/OData1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "OData",
-				"typeProperties": {
-					"url": "[parameters('OData1_properties_typeProperties_url')]",
-					"authenticationType": "Anonymous"
+					"authenticationType": "Basic",
+					"userName": "[parameters('HttpServer5_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('HttpServer5_password')]"
+					}
 				}
 			},
 			"dependsOn": []

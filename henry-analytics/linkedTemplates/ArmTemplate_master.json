@@ -39,9 +39,29 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage16'"
 		},
+		"AzureBlobStorage17_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage17'"
+		},
+		"AzureBlobStorage18_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage18'"
+		},
+		"AzureBlobStorage19_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage19'"
+		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorage20_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage20'"
+		},
+		"AzureBlobStorage21_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage21'"
 		},
 		"AzureBlobStorage3_connectionString": {
 			"type": "secureString",
@@ -91,6 +111,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase3'"
 		},
+		"Azure_SQL_Linked_Service_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Azure_SQL_Linked_Service'"
+		},
 		"BlobParquet_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobParquet'"
@@ -102,6 +126,14 @@
 		"HenryML_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'HenryML'"
+		},
+		"HttpServer5_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer5'"
+		},
+		"HttpServer6_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer6'"
 		},
 		"LifeExp_connectionString": {
 			"type": "secureString",
@@ -186,6 +218,22 @@
 		"HttpServer4_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "http://api.worldbank.org/V2/incomeLevel/LIC/country"
+		},
+		"HttpServer5_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ml.azure.com/fileexplorerAzNB?wsid=/subscriptions/db9a7dcd-aeea-49d1-83eb-52ebd1441034/resourcegroups/Prueba/providers/Microsoft.MachineLearningServices/workspaces/HenryML&tid=1c7cee35-d402-4411-bbd7-2d813566a583&activeFilePath=Users/CAESARCAPO/dataset_filled.csv"
+		},
+		"HttpServer5_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "caesarcapo"
+		},
+		"HttpServer6_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ml.azure.com/fileexplorerAzNB?wsid=/subscriptions/db9a7dcd-aeea-49d1-83eb-52ebd1441034/resourcegroups/Prueba/providers/Microsoft.MachineLearningServices/workspaces/HenryML&tid=1c7cee35-d402-4411-bbd7-2d813566a583&activeFilePath=Users/CAESARCAPO/dataset_filled.csv"
+		},
+		"HttpServer6_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "caesarcapo"
 		},
 		"HttpServer_Henry_properties_typeProperties_url": {
 			"type": "string",
@@ -275,6 +323,10 @@
 			"type": "string",
 			"defaultValue": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ne;et;eg;cd;tz;za;mt;se;it;es;pl;fr;in;pk;bd;af;np;sk;id;usa;cn/indicator/SH.XPD.CHEX.PC.CD;SH.XPD.CHEX.GD.ZS;SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.CDRT.IN;NY.GDP.MKTP.KD;NY.GDP.MKTP.KN;SH.STA.TRAF.P5?&source=2&format=json&per_page=30132"
 		},
+		"WorldBank_LinkedService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ng;et;eg;cd;tz;de;za;it;es;pl;fr;in;pk;bd;af;np;id;usa;cn;ru;gb;au;ro;lk/indicator/SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;NY.GDP.MKTP.CD;NY.GDP.PCAP.CD?&source=2&format=json&per_page=23000"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -326,8 +378,23 @@
 					"AzureBlobStorage16_connectionString": {
 						"value": "[parameters('AzureBlobStorage16_connectionString')]"
 					},
+					"AzureBlobStorage17_connectionString": {
+						"value": "[parameters('AzureBlobStorage17_connectionString')]"
+					},
+					"AzureBlobStorage18_connectionString": {
+						"value": "[parameters('AzureBlobStorage18_connectionString')]"
+					},
+					"AzureBlobStorage19_connectionString": {
+						"value": "[parameters('AzureBlobStorage19_connectionString')]"
+					},
 					"AzureBlobStorage2_connectionString": {
 						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureBlobStorage20_connectionString": {
+						"value": "[parameters('AzureBlobStorage20_connectionString')]"
+					},
+					"AzureBlobStorage21_connectionString": {
+						"value": "[parameters('AzureBlobStorage21_connectionString')]"
 					},
 					"AzureBlobStorage3_connectionString": {
 						"value": "[parameters('AzureBlobStorage3_connectionString')]"
@@ -344,35 +411,8 @@
 					"AzureBlobStorage7_connectionString": {
 						"value": "[parameters('AzureBlobStorage7_connectionString')]"
 					},
-					"AzureBlobStorage8_connectionString": {
-						"value": "[parameters('AzureBlobStorage8_connectionString')]"
-					},
-					"AzureBlobStorage9_connectionString": {
-						"value": "[parameters('AzureBlobStorage9_connectionString')]"
-					},
-					"AzureDataLakeStorage1_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
-					},
-					"AzureDataLakeStorage2_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
-					},
 					"Adolescent_fertility_rate_properties_typeProperties_url": {
 						"value": "[parameters('Adolescent_fertility_rate_properties_typeProperties_url')]"
-					},
-					"AzureDataLakeStorage1_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
-					},
-					"AzureDataLakeStorage2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
-					},
-					"AzureMLService1_properties_typeProperties_subscriptionId": {
-						"value": "[parameters('AzureMLService1_properties_typeProperties_subscriptionId')]"
-					},
-					"AzureMLService1_properties_typeProperties_resourceGroupName": {
-						"value": "[parameters('AzureMLService1_properties_typeProperties_resourceGroupName')]"
-					},
-					"AzureMLService1_properties_typeProperties_mlWorkspaceName": {
-						"value": "[parameters('AzureMLService1_properties_typeProperties_mlWorkspaceName')]"
 					}
 				}
 			},
@@ -392,6 +432,18 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureBlobStorage8_connectionString": {
+						"value": "[parameters('AzureBlobStorage8_connectionString')]"
+					},
+					"AzureBlobStorage9_connectionString": {
+						"value": "[parameters('AzureBlobStorage9_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
 					},
@@ -400,6 +452,9 @@
 					},
 					"AzureSqlDatabase3_connectionString": {
 						"value": "[parameters('AzureSqlDatabase3_connectionString')]"
+					},
+					"Azure_SQL_Linked_Service_connectionString": {
+						"value": "[parameters('Azure_SQL_Linked_Service_connectionString')]"
 					},
 					"BlobParquet_connectionString": {
 						"value": "[parameters('BlobParquet_connectionString')]"
@@ -410,14 +465,23 @@
 					"HenryML_connectionString": {
 						"value": "[parameters('HenryML_connectionString')]"
 					},
-					"LifeExp_connectionString": {
-						"value": "[parameters('LifeExp_connectionString')]"
+					"HttpServer5_password": {
+						"value": "[parameters('HttpServer5_password')]"
 					},
-					"LifeExpectancy_connectionString": {
-						"value": "[parameters('LifeExpectancy_connectionString')]"
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
-					"Maestra13_connectionString": {
-						"value": "[parameters('Maestra13_connectionString')]"
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"AzureMLService1_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('AzureMLService1_properties_typeProperties_subscriptionId')]"
+					},
+					"AzureMLService1_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('AzureMLService1_properties_typeProperties_resourceGroupName')]"
+					},
+					"AzureMLService1_properties_typeProperties_mlWorkspaceName": {
+						"value": "[parameters('AzureMLService1_properties_typeProperties_mlWorkspaceName')]"
 					},
 					"Birth_Rate_Crude_properties_typeProperties_url": {
 						"value": "[parameters('Birth_Rate_Crude_properties_typeProperties_url')]"
@@ -440,17 +504,11 @@
 					"HttpServer4_properties_typeProperties_url": {
 						"value": "[parameters('HttpServer4_properties_typeProperties_url')]"
 					},
-					"HttpServer_Henry_properties_typeProperties_url": {
-						"value": "[parameters('HttpServer_Henry_properties_typeProperties_url')]"
+					"HttpServer5_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer5_properties_typeProperties_url')]"
 					},
-					"Life_expectancy_at_birth_female_properties_typeProperties_url": {
-						"value": "[parameters('Life_expectancy_at_birth_female_properties_typeProperties_url')]"
-					},
-					"Maestra_13_series_properties_typeProperties_url": {
-						"value": "[parameters('Maestra_13_series_properties_typeProperties_url')]"
-					},
-					"OData1_properties_typeProperties_url": {
-						"value": "[parameters('OData1_properties_typeProperties_url')]"
+					"HttpServer5_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer5_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -472,11 +530,35 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"SQLDWHENRY_connectionString": {
-						"value": "[parameters('SQLDWHENRY_connectionString')]"
+					"HttpServer6_password": {
+						"value": "[parameters('HttpServer6_password')]"
 					},
-					"SQLaDataLake_connectionString": {
-						"value": "[parameters('SQLaDataLake_connectionString')]"
+					"LifeExp_connectionString": {
+						"value": "[parameters('LifeExp_connectionString')]"
+					},
+					"LifeExpectancy_connectionString": {
+						"value": "[parameters('LifeExpectancy_connectionString')]"
+					},
+					"Maestra13_connectionString": {
+						"value": "[parameters('Maestra13_connectionString')]"
+					},
+					"HttpServer6_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer6_properties_typeProperties_url')]"
+					},
+					"HttpServer6_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer6_properties_typeProperties_userName')]"
+					},
+					"HttpServer_Henry_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer_Henry_properties_typeProperties_url')]"
+					},
+					"Life_expectancy_at_birth_female_properties_typeProperties_url": {
+						"value": "[parameters('Life_expectancy_at_birth_female_properties_typeProperties_url')]"
+					},
+					"Maestra_13_series_properties_typeProperties_url": {
+						"value": "[parameters('Maestra_13_series_properties_typeProperties_url')]"
+					},
+					"OData1_properties_typeProperties_url": {
+						"value": "[parameters('OData1_properties_typeProperties_url')]"
 					},
 					"OData2_properties_typeProperties_url": {
 						"value": "[parameters('OData2_properties_typeProperties_url')]"
@@ -513,24 +595,6 @@
 					},
 					"RestService4_properties_typeProperties_url": {
 						"value": "[parameters('RestService4_properties_typeProperties_url')]"
-					},
-					"RestService5_properties_typeProperties_url": {
-						"value": "[parameters('RestService5_properties_typeProperties_url')]"
-					},
-					"RestService6_properties_typeProperties_url": {
-						"value": "[parameters('RestService6_properties_typeProperties_url')]"
-					},
-					"RestService7_properties_typeProperties_url": {
-						"value": "[parameters('RestService7_properties_typeProperties_url')]"
-					},
-					"RestService8_properties_typeProperties_url": {
-						"value": "[parameters('RestService8_properties_typeProperties_url')]"
-					},
-					"RestService9_properties_typeProperties_url": {
-						"value": "[parameters('RestService9_properties_typeProperties_url')]"
-					},
-					"TEST_properties_typeProperties_url": {
-						"value": "[parameters('TEST_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -552,6 +616,12 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"SQLDWHENRY_connectionString": {
+						"value": "[parameters('SQLDWHENRY_connectionString')]"
+					},
+					"SQLaDataLake_connectionString": {
+						"value": "[parameters('SQLaDataLake_connectionString')]"
+					},
 					"limpia_connectionString": {
 						"value": "[parameters('limpia_connectionString')]"
 					},
@@ -560,6 +630,27 @@
 					},
 					"sqldw_henrypf_connectionString": {
 						"value": "[parameters('sqldw_henrypf_connectionString')]"
+					},
+					"RestService5_properties_typeProperties_url": {
+						"value": "[parameters('RestService5_properties_typeProperties_url')]"
+					},
+					"RestService6_properties_typeProperties_url": {
+						"value": "[parameters('RestService6_properties_typeProperties_url')]"
+					},
+					"RestService7_properties_typeProperties_url": {
+						"value": "[parameters('RestService7_properties_typeProperties_url')]"
+					},
+					"RestService8_properties_typeProperties_url": {
+						"value": "[parameters('RestService8_properties_typeProperties_url')]"
+					},
+					"RestService9_properties_typeProperties_url": {
+						"value": "[parameters('RestService9_properties_typeProperties_url')]"
+					},
+					"TEST_properties_typeProperties_url": {
+						"value": "[parameters('TEST_properties_typeProperties_url')]"
+					},
+					"WorldBank_LinkedService_properties_typeProperties_url": {
+						"value": "[parameters('WorldBank_LinkedService_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -605,6 +696,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'henry-analytics_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "henry-analytics_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'henry-analytics_ArmTemplate_5')]"
 			]
 		}
 	]

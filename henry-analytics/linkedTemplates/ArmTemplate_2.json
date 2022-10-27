@@ -7,13 +7,45 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "henry-analytics"
 		},
-		"SQLDWHENRY_connectionString": {
+		"HttpServer6_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SQLDWHENRY'"
+			"metadata": "Secure string for 'password' of 'HttpServer6'"
 		},
-		"SQLaDataLake_connectionString": {
+		"LifeExp_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SQLaDataLake'"
+			"metadata": "Secure string for 'connectionString' of 'LifeExp'"
+		},
+		"LifeExpectancy_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LifeExpectancy'"
+		},
+		"Maestra13_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Maestra13'"
+		},
+		"HttpServer6_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ml.azure.com/fileexplorerAzNB?wsid=/subscriptions/db9a7dcd-aeea-49d1-83eb-52ebd1441034/resourcegroups/Prueba/providers/Microsoft.MachineLearningServices/workspaces/HenryML&tid=1c7cee35-d402-4411-bbd7-2d813566a583&activeFilePath=Users/CAESARCAPO/dataset_filled.csv"
+		},
+		"HttpServer6_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "caesarcapo"
+		},
+		"HttpServer_Henry_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=excel"
+		},
+		"Life_expectancy_at_birth_female_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.FE.IN?format=json&per_page=16500"
+		},
+		"Maestra_13_series_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ng;et;eg;cd;tz;de;za;it;es;pl;fr;in;pk;bd;af;np;id;usa;cn;ru;gb;au;ro;lk/indicator/SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;NY.GDP.MKTP.CD;NY.GDP.PCAP.CD?&source=2&format=json&per_page=23000"
+		},
+		"OData1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ghoapi.azureedge.net/api/WHOSIS_000001"
 		},
 		"OData2_properties_typeProperties_url": {
 			"type": "string",
@@ -62,36 +94,132 @@
 		"RestService4_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&per_page=16500"
-		},
-		"RestService5_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "http://api.worldbank.org/v2/country/all/indicator/SP.ADO.TFRT?format=json&per_page=16500"
-		},
-		"RestService6_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "http://api.worldbank.org/v2/country/all/indicator/SP.DYN.CBRT.IN?format=json&per_page=16500"
-		},
-		"RestService7_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "http://api.worldbank.org/v2/country/all/indicator/SH.STA.BRTC.ZS?format=json&per_page=16500"
-		},
-		"RestService8_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "http://api.worldbank.org/v2/country/all/indicator/SH.XPD.KHEX.GD.ZS?format=json&per_page=16500"
-		},
-		"RestService9_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "http://api.worldbank.org/v2/country/all/indicator/SH.DTH.COMM.ZS?format=json&per_page=16500"
-		},
-		"TEST_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ne;et;eg;cd;tz;za;mt;se;it;es;pl;fr;in;pk;bd;af;np;sk;id;usa;cn/indicator/SH.XPD.CHEX.PC.CD;SH.XPD.CHEX.GD.ZS;SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.CDRT.IN;NY.GDP.MKTP.KD;NY.GDP.MKTP.KN;SH.STA.TRAF.P5?&source=2&format=json&per_page=30132"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/HttpServer6')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('HttpServer6_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('HttpServer6_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('HttpServer6_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HttpServer_Henry')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('HttpServer_Henry_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": false,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LifeExp')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('LifeExp_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LifeExpectancy')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('LifeExpectancy_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Life_expectancy_at_birth_female')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Life_expectancy_at_birth_female",
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('Life_expectancy_at_birth_female_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Maestra13')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('Maestra13_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Maestra_13_series')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "M",
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('Maestra_13_series_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/OData1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "OData",
+				"typeProperties": {
+					"url": "[parameters('OData1_properties_typeProperties_url')]",
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/OData2')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -267,122 +395,6 @@
 				"type": "RestService",
 				"typeProperties": {
 					"url": "[parameters('RestService4_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestService5')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('RestService5_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestService6')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('RestService6_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestService7')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('RestService7_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestService8')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('RestService8_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestService9')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('RestService9_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SQLDWHENRY')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('SQLDWHENRY_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SQLaDataLake')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('SQLaDataLake_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/TEST')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('TEST_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Anonymous"
 				}

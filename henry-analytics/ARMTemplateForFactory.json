@@ -39,9 +39,29 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage16'"
 		},
+		"AzureBlobStorage17_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage17'"
+		},
+		"AzureBlobStorage18_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage18'"
+		},
+		"AzureBlobStorage19_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage19'"
+		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorage20_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage20'"
+		},
+		"AzureBlobStorage21_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage21'"
 		},
 		"AzureBlobStorage3_connectionString": {
 			"type": "secureString",
@@ -91,6 +111,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase3'"
 		},
+		"Azure_SQL_Linked_Service_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Azure_SQL_Linked_Service'"
+		},
 		"BlobParquet_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobParquet'"
@@ -102,6 +126,14 @@
 		"HenryML_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'HenryML'"
+		},
+		"HttpServer5_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer5'"
+		},
+		"HttpServer6_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer6'"
 		},
 		"LifeExp_connectionString": {
 			"type": "secureString",
@@ -186,6 +218,22 @@
 		"HttpServer4_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "http://api.worldbank.org/V2/incomeLevel/LIC/country"
+		},
+		"HttpServer5_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ml.azure.com/fileexplorerAzNB?wsid=/subscriptions/db9a7dcd-aeea-49d1-83eb-52ebd1441034/resourcegroups/Prueba/providers/Microsoft.MachineLearningServices/workspaces/HenryML&tid=1c7cee35-d402-4411-bbd7-2d813566a583&activeFilePath=Users/CAESARCAPO/dataset_filled.csv"
+		},
+		"HttpServer5_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "caesarcapo"
+		},
+		"HttpServer6_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ml.azure.com/fileexplorerAzNB?wsid=/subscriptions/db9a7dcd-aeea-49d1-83eb-52ebd1441034/resourcegroups/Prueba/providers/Microsoft.MachineLearningServices/workspaces/HenryML&tid=1c7cee35-d402-4411-bbd7-2d813566a583&activeFilePath=Users/CAESARCAPO/dataset_filled.csv"
+		},
+		"HttpServer6_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "caesarcapo"
 		},
 		"HttpServer_Henry_properties_typeProperties_url": {
 			"type": "string",
@@ -274,6 +322,10 @@
 		"TEST_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ne;et;eg;cd;tz;za;mt;se;it;es;pl;fr;in;pk;bd;af;np;sk;id;usa;cn/indicator/SH.XPD.CHEX.PC.CD;SH.XPD.CHEX.GD.ZS;SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.CDRT.IN;NY.GDP.MKTP.KD;NY.GDP.MKTP.KN;SH.STA.TRAF.P5?&source=2&format=json&per_page=30132"
+		},
+		"WorldBank_LinkedService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ng;et;eg;cd;tz;de;za;it;es;pl;fr;in;pk;bd;af;np;id;usa;cn;ru;gb;au;ro;lk/indicator/SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;NY.GDP.MKTP.CD;NY.GDP.PCAP.CD?&source=2&format=json&per_page=23000"
 		}
 	},
 	"variables": {
@@ -281,22 +333,15 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/DataSource')]",
+			"name": "[concat(parameters('factoryName'), '/API DATA')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "NCD_BMI_25C",
+						"name": "Copy data WorldBank",
 						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "NCD_HYP_PREVALENCE_A",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
+						"dependsOn": [],
 						"policy": {
 							"timeout": "0.12:00:00",
 							"retry": 0,
@@ -304,260 +349,89 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "NCD_BMI_25C"
-							},
-							{
-								"name": "Destination",
-								"value": "RAW.NCD_BMI_25C"
-							}
-						],
+						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "ODataSource"
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
 							},
 							"sink": {
 								"type": "AzureSqlSink",
-								"preCopyScript": "TRUNCATE TABLE RAW. NCD_BMI_25C",
+								"preCopyScript": "TRUNCATE TABLE RAW.WORLDBANKDATA",
 								"writeBehavior": "insert",
 								"sqlWriterUseTableLock": false,
 								"disableMetricsCollection": false
 							},
 							"enableStaging": false,
-							"validateDataConsistency": false,
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
 									{
 										"source": {
-											"name": "Id",
-											"type": "Int64"
+											"path": "$['indicator']['id']"
 										},
 										"sink": {
-											"name": "Id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "IndicatorCode",
-											"type": "String"
-										},
-										"sink": {
-											"name": "IndicatorCode",
+											"name": "indicator_id",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"name": "SpatialDimType",
-											"type": "String"
+											"path": "$['indicator']['value']"
 										},
 										"sink": {
-											"name": "SpatialDimType",
+											"name": "indicator_value",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"name": "SpatialDim",
-											"type": "String"
+											"path": "$['country']['id']"
 										},
 										"sink": {
-											"name": "SpatialDim",
+											"name": "country_id",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"name": "TimeDimType",
-											"type": "String"
+											"path": "$['country']['value']"
 										},
 										"sink": {
-											"name": "TimeDimType",
+											"name": "country_value",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"name": "TimeDim",
-											"type": "Int32"
+											"path": "$['countryiso3code']"
 										},
 										"sink": {
-											"name": "TimeDim",
+											"name": "countryiso3code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['date']"
+										},
+										"sink": {
+											"name": "date",
 											"type": "Int32"
 										}
 									},
 									{
 										"source": {
-											"name": "Dim1Type",
-											"type": "String"
+											"path": "$['value']"
 										},
 										"sink": {
-											"name": "Dim1Type",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Dim1",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Dim1",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Dim2Type",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Dim2Type",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Dim2",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Dim2",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Dim3Type",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Dim3Type",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Dim3",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Dim3",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "DataSourceDimType",
-											"type": "String"
-										},
-										"sink": {
-											"name": "DataSourceDimType",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "DataSourceDim",
-											"type": "String"
-										},
-										"sink": {
-											"name": "DataSourceDim",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Value",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Value",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "NumericValue",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "NumericValue",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "Low",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "Low",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "High",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "High",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "Comments",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Comments",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Date",
-											"type": "DateTimeOffset"
-										},
-										"sink": {
-											"name": "Date",
-											"type": "DateTimeOffset"
-										}
-									},
-									{
-										"source": {
-											"name": "TimeDimensionValue",
-											"type": "String"
-										},
-										"sink": {
-											"name": "TimeDimensionValue",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "TimeDimensionBegin",
-											"type": "DateTimeOffset"
-										},
-										"sink": {
-											"name": "TimeDimensionBegin",
-											"type": "DateTimeOffset"
-										}
-									},
-									{
-										"source": {
-											"name": "TimeDimensionEnd",
-											"type": "DateTimeOffset"
-										},
-										"sink": {
-											"name": "TimeDimensionEnd",
-											"type": "DateTimeOffset"
+											"name": "value",
+											"type": "Double"
 										}
 									}
 								]
@@ -565,7 +439,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SourceDataset_582",
+								"referenceName": "WorldBank",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -576,17 +450,17 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"vEsquema": "RAW",
-									"vTabla": "NCD_BMI_25C"
+									"vTabla": "WORLDBANKDATA"
 								}
 							}
 						]
 					},
 					{
-						"name": "NCD_HYP_PREVALENCE_A",
+						"name": "Copy data OMS_1",
 						"type": "Copy",
 						"dependsOn": [
 							{
-								"activity": "Copy SERIESWORLDBANK",
+								"activity": "Copy data WorldBank",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -599,29 +473,20 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "NCD_HYP_PREVALENCE_A"
-							},
-							{
-								"name": "Destination",
-								"value": "RAW.NCD_HYP_PREVALENCE_A"
-							}
-						],
+						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "ODataSource"
+								"type": "ODataSource",
+								"httpRequestTimeout": "00:05:00"
 							},
 							"sink": {
 								"type": "AzureSqlSink",
-								"preCopyScript": "TRUNCATE TABLE RAW. NCD_HYP_PREVALENCE_A",
+								"preCopyScript": "TRUNCATE TABLE RAW.NCD_HYP_PREVALENCE_A",
 								"writeBehavior": "insert",
 								"sqlWriterUseTableLock": false,
 								"disableMetricsCollection": false
 							},
 							"enableStaging": false,
-							"validateDataConsistency": false,
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
@@ -877,30 +742,32 @@
 						]
 					},
 					{
-						"name": "Copy SERIESWORLDBANK",
+						"name": "Copy data OMS_2",
 						"type": "Copy",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Copy data OMS_1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "0.12:00:00",
-							"retry": 1,
-							"retryIntervalInSeconds": 120,
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
 							"secureOutput": false,
 							"secureInput": false
 						},
 						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "RestSource",
-								"httpRequestTimeout": "00:01:40",
-								"requestInterval": "00.00:00:00.010",
-								"requestMethod": "GET",
-								"paginationRules": {
-									"supportRFC5988": "true"
-								}
+								"type": "ODataSource",
+								"httpRequestTimeout": "00:05:00"
 							},
 							"sink": {
 								"type": "AzureSqlSink",
-								"preCopyScript": "TRUNCATE TABLE raw.SERIESWORLDBANK",
+								"preCopyScript": "TRUNCATE TABLE RAW.NCD_BMI_25C",
 								"writeBehavior": "insert",
 								"sqlWriterUseTableLock": false,
 								"disableMetricsCollection": false
@@ -911,74 +778,240 @@
 								"mappings": [
 									{
 										"source": {
-											"path": "$['indicator']['id']"
+											"name": "Id",
+											"type": "Int64"
 										},
 										"sink": {
-											"name": "indicator_id",
+											"name": "Id",
+											"type": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "IndicatorCode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "IndicatorCode",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"path": "$['indicator']['value']"
+											"name": "SpatialDimType",
+											"type": "String"
 										},
 										"sink": {
-											"name": "indicator_value",
+											"name": "SpatialDimType",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"path": "$['country']['id']"
+											"name": "SpatialDim",
+											"type": "String"
 										},
 										"sink": {
-											"name": "country_id",
+											"name": "SpatialDim",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"path": "$['country']['value']"
+											"name": "TimeDimType",
+											"type": "String"
 										},
 										"sink": {
-											"name": "country_value",
+											"name": "TimeDimType",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"path": "$['countryiso3code']"
+											"name": "TimeDim",
+											"type": "Int32"
 										},
 										"sink": {
-											"name": "countryiso3code",
+											"name": "TimeDim",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim1Type",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim1Type",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"path": "$['date']"
+											"name": "Dim1",
+											"type": "String"
 										},
 										"sink": {
-											"name": "date",
-											"type": "Double"
+											"name": "Dim1",
+											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"path": "$['value']"
+											"name": "Dim2Type",
+											"type": "String"
 										},
 										"sink": {
-											"name": "value",
-											"type": "Double"
+											"name": "Dim2Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim3Type",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim3Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Dim3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Dim3",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DataSourceDimType",
+											"type": "String"
+										},
+										"sink": {
+											"name": "DataSourceDimType",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DataSourceDim",
+											"type": "String"
+										},
+										"sink": {
+											"name": "DataSourceDim",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Value",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Value",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "NumericValue",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "NumericValue",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "Low",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Low",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "High",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "High",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "Comments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Date",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "Date",
+											"type": "DateTimeOffset"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionValue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "TimeDimensionValue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionBegin",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "TimeDimensionBegin",
+											"type": "DateTimeOffset"
+										}
+									},
+									{
+										"source": {
+											"name": "TimeDimensionEnd",
+											"type": "DateTimeOffset"
+										},
+										"sink": {
+											"name": "TimeDimensionEnd",
+											"type": "DateTimeOffset"
 										}
 									}
-								],
-								"collectionReference": ""
+								]
 							}
 						},
 						"inputs": [
 							{
-								"referenceName": "Mestra_13_series",
+								"referenceName": "SourceDataset_582",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -988,18 +1021,52 @@
 								"referenceName": "SQLDWHENRY",
 								"type": "DatasetReference",
 								"parameters": {
-									"vEsquema": "raw",
-									"vTabla": "SERIESWORLDBANK"
+									"vEsquema": "RAW",
+									"vTabla": "NCD_BMI_25C"
 								}
 							}
 						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/WorldBank')]",
+				"[concat(variables('factoryId'), '/datasets/SQLDWHENRY')]",
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_j4u')]",
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_582')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ETL InData')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Execute API DATA",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "API DATA",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
 					},
 					{
-						"name": "Transformacion_Load",
+						"name": "Consolidacion_Procedimiento Almacenado",
 						"type": "SqlServerStoredProcedure",
 						"dependsOn": [
 							{
-								"activity": "NCD_BMI_25C",
+								"activity": "Execute API DATA",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -1022,352 +1089,11 @@
 						}
 					},
 					{
-						"name": "Copy data Cleansed to SQL",
+						"name": "SQL a Storage",
 						"type": "Copy",
 						"dependsOn": [
 							{
-								"activity": "Machine Learning Execute Pipeline1",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false,
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "country_value",
-											"type": "String",
-											"physicalType": "UTF8"
-										},
-										"sink": {
-											"name": "country_value",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "date",
-											"type": "Int64",
-											"physicalType": "INT64"
-										},
-										"sink": {
-											"name": "date",
-											"type": "Int64",
-											"physicalType": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "countryiso3code",
-											"type": "String",
-											"physicalType": "UTF8"
-										},
-										"sink": {
-											"name": "countryiso3code",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "NY_GDP_MKTP_CD",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "NY_GDP_MKTP_CD",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SH_STA_SUIC_P5",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SH_STA_SUIC_P5",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SP_DYN_TFRT_IN",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SP_DYN_TFRT_IN",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SP_ADO_TFRT",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SP_ADO_TFRT",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SP_DYN_CBRT_IN",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SP_DYN_CBRT_IN",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SP_DYN_IMRT_IN",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SP_DYN_IMRT_IN",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SH_XPD_CHEX_PC_CD",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SH_XPD_CHEX_PC_CD",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SH_XPD_CHEX_GD_ZS",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SH_XPD_CHEX_GD_ZS",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SP_DYN_LE00_IN",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SP_DYN_LE00_IN",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SP_POP_GROW",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SP_POP_GROW",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "SP_POP_TOTL",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "SP_POP_TOTL",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "NY_GDP_PCAP_CD",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "NY_GDP_PCAP_CD",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "ncd_bmi_25a",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "ncd_bmi_25a",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "ncd_hyp_prevalence_a",
-											"type": "Double",
-											"physicalType": "DOUBLE"
-										},
-										"sink": {
-											"name": "ncd_hyp_prevalence_a",
-											"type": "Double",
-											"physicalType": "Double"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Parquet3",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "SQLDWHENRY",
-								"type": "DatasetReference",
-								"parameters": {
-									"vEsquema": "raw",
-									"vTabla": "Maestra_Cleansed"
-								}
-							}
-						]
-					},
-					{
-						"name": "Machine Learning Execute Pipeline1",
-						"type": "AzureMLExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "Copy data de SQL a Data Lake",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"mlPipelineId": "bcbf25fe-c880-47d4-bae2-1b9c32d454d1"
-						},
-						"linkedServiceName": {
-							"referenceName": "AzureMLService1",
-							"type": "LinkedServiceReference"
-						}
-					},
-					{
-						"name": "Data flow Incremental Load",
-						"type": "ExecuteDataFlow",
-						"dependsOn": [
-							{
-								"activity": "Copy data Cleansed to SQL",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataflow": {
-								"referenceName": "dataflow1",
-								"type": "DataFlowReference",
-								"parameters": {
-									"parameter1": "'indicator_id'"
-								},
-								"datasetParameters": {
-									"source1": {
-										"vEsquema": "DWH",
-										"vTabla": "Mestra_Cleansed"
-									},
-									"sink1": {}
-								}
-							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine",
-							"continuationSettings": {
-								"customizedCheckpointKey": "787ddb09-a3f6-41f5-9376-0a9c993b71ba"
-							}
-						}
-					},
-					{
-						"name": "Copy data de SQL a Data Lake",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "Transformacion_Load",
+								"activity": "Consolidacion_Procedimiento Almacenado",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -1413,37 +1139,341 @@
 								"referenceName": "SQLDWHENRY",
 								"type": "DatasetReference",
 								"parameters": {
-									"vEsquema": "dwh",
+									"vEsquema": "DWH",
 									"vTabla": "Maestra_Indicadores"
 								}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "Maestra_Indicadores",
+								"referenceName": "csv_Maestra_Indicadores",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Data Cleansed a SQL",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Imputacion_valores_faltantes",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "henrypf//dataset_filled.csv"
+							},
+							{
+								"name": "Destination",
+								"value": "@{'DWH'}.@{'Data_Cleansed'}"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE TABLE DWH.Data_Cleansed",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "country_value",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "country_value",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "date",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "date",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "countryiso3code",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "countryiso3code",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "NY.GDP.MKTP.CD",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "NY.GDP.MKTP.CD",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SH.STA.SUIC.P5",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SH.STA.SUIC.P5",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SP.DYN.TFRT.IN",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SP.DYN.TFRT.IN",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SP.ADO.TFRT",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SP.ADO.TFRT",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SP.DYN.CBRT.IN",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SP.DYN.CBRT.IN",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SP.DYN.IMRT.IN",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SP.DYN.IMRT.IN",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SH.XPD.CHEX.PC.CD",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SH.XPD.CHEX.PC.CD",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SH.XPD.CHEX.GD.ZS",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SH.XPD.CHEX.GD.ZS",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SP.DYN.LE00.IN",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SP.DYN.LE00.IN",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SP.POP.GROW",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SP.POP.GROW",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "SP.POP.TOTL",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SP.POP.TOTL",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "NY.GDP.PCAP.CD",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "NY.GDP.PCAP.CD",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "ncd_bmi_25a",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ncd_bmi_25a",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									},
+									{
+										"source": {
+											"name": "ncd_hyp_prevalence_a",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ncd_hyp_prevalence_a",
+											"type": "Double",
+											"physicalType": "float"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DelimitedText10",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SQLDWHENRY",
+								"type": "DatasetReference",
+								"parameters": {
+									"vEsquema": "DWH",
+									"vTabla": "Data_Cleansed"
+								}
+							}
+						]
+					},
+					{
+						"name": "Imputacion_valores_faltantes",
+						"type": "AzureMLExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "SQL a Storage",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"mlPipelineId": "cf400623-5f70-4511-99f7-05f22c5fd88b"
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureMLService1",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
-				"annotations": [],
-				"lastPublishTime": "2022-10-21T14:15:56Z"
+				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_582')]",
-				"[concat(variables('factoryId'), '/datasets/SQLDWHENRY')]",
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_j4u')]",
-				"[concat(variables('factoryId'), '/datasets/Mestra_13_series')]",
+				"[concat(variables('factoryId'), '/pipelines/API DATA')]",
 				"[concat(variables('factoryId'), '/linkedServices/SQLDWHENRY')]",
-				"[concat(variables('factoryId'), '/datasets/Parquet3')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureMLService1')]",
-				"[concat(variables('factoryId'), '/dataflows/dataflow1')]",
-				"[concat(variables('factoryId'), '/datasets/Maestra_Indicadores')]"
+				"[concat(variables('factoryId'), '/datasets/SQLDWHENRY')]",
+				"[concat(variables('factoryId'), '/datasets/csv_Maestra_Indicadores')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText10')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureMLService1')]"
 			]
 		},
 		{
@@ -1486,6 +1516,108 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SQLDWHENRY",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "studentId",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "studentName",
+						"type": "varchar"
+					},
+					{
+						"name": "stream",
+						"type": "varchar"
+					},
+					{
+						"name": "marks",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "createDate",
+						"type": "datetime2",
+						"scale": 7
+					},
+					{
+						"name": "updateDate",
+						"type": "datetime2",
+						"scale": 7
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Student"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/SQLDWHENRY')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SQLDWHENRY",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "Raw",
+					"table": "stgStudent"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/SQLDWHENRY')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SQLDWHENRY",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "tableName",
+						"type": "varchar"
+					},
+					{
+						"name": "waterMarkVal",
+						"type": "datetime2",
+						"scale": 7
+					}
+				],
+				"typeProperties": {
+					"schema": "Raw",
+					"table": "WaterMark"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/SQLDWHENRY')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Birth_Rate_Crude')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1501,6 +1633,103 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/Birth_Rate_Crude')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CSV_Data_Cleansed')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage18",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "df_final_MICE.csv",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "NY.GDP.MKTP.CD",
+						"type": "String"
+					},
+					{
+						"name": "SH.STA.SUIC.P5",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.TFRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.ADO.TFRT",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.CBRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.IMRT.IN",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.PC.CD",
+						"type": "String"
+					},
+					{
+						"name": "SH.XPD.CHEX.GD.ZS",
+						"type": "String"
+					},
+					{
+						"name": "SP.DYN.LE00.IN",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.GROW",
+						"type": "String"
+					},
+					{
+						"name": "SP.POP.TOTL",
+						"type": "String"
+					},
+					{
+						"name": "NY.GDP.PCAP.CD",
+						"type": "String"
+					},
+					{
+						"name": "ncd_bmi_25a",
+						"type": "String"
+					},
+					{
+						"name": "ncd_hyp_prevalence_a",
+						"type": "String"
+					},
+					{
+						"name": "country_value",
+						"type": "String"
+					},
+					{
+						"name": "date",
+						"type": "String"
+					},
+					{
+						"name": "countryiso3code",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage18')]"
 			]
 		},
 		{
@@ -1587,6 +1816,87 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/HttpServer4')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText10')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage21",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "data.csv",
+						"folderPath": "azureml/deae09c5-f532-482b-85d7-55a813242df1/Results_dataset",
+						"container": "azureml"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage21')]"
 			]
 		},
 		{
@@ -2359,6 +2669,28 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Json1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "HttpServer6",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/HttpServer6')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Life_expectancy_at_birth_female')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2394,6 +2726,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -2679,6 +3012,105 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage15')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Parquet4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage19",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "data.dataset.parquet",
+						"folderPath": "azureml/3d7746d3-0818-422b-990f-1abf68fc6c4a/Result_Dataset",
+						"container": "azureml-blobstore-39f905b4-7060-4ac1-9ca2-174b0bbb13e2"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "NY.GDP.MKTP.CD",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SH.STA.SUIC.P5",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SP.DYN.TFRT.IN",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SP.ADO.TFRT",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SP.DYN.CBRT.IN",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SP.DYN.IMRT.IN",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SH.XPD.CHEX.PC.CD",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SH.XPD.CHEX.GD.ZS",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SP.DYN.LE00.IN",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SP.POP.GROW",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "SP.POP.TOTL",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "NY.GDP.PCAP.CD",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "ncd_bmi_25a",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "ncd_hyp_prevalence_a",
+						"type": "DOUBLE"
+					},
+					{
+						"name": "country_value",
+						"type": "UTF8"
+					},
+					{
+						"name": "date",
+						"type": "INT64"
+					},
+					{
+						"name": "countryiso3code",
+						"type": "UTF8"
+					},
+					{
+						"name": "__index_level_0__",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage19')]"
 			]
 		},
 		{
@@ -3050,12 +3482,39 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "DWH",
-					"table": "Maestra_Cleansed"
+					"schema": {
+						"value": "@dataset().vEsquema",
+						"type": "Expression"
+					},
+					"table": {
+						"value": "@dataset().vTabla",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/sqldw_henrypf')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SQL_Azure')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Azure_SQL_Linked_Service",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "Raw",
+					"table": "worldbankdata"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Azure_SQL_Linked_Service')]"
 			]
 		},
 		{
@@ -3114,6 +3573,103 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/TEST')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WorldBank')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WorldBank_LinkedService",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WorldBank_LinkedService')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/csv_Maestra_Indicadores')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage17",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "henrypf"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage17')]"
 			]
 		},
 		{
@@ -3237,6 +3793,45 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage17')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage17_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage18')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage18_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage19')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage19_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage2')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -3245,6 +3840,32 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureBlobStorage2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage20')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage20_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage21')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage21_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -3431,6 +4052,19 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Azure_SQL_Linked_Service')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('Azure_SQL_Linked_Service_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Birth_Rate_Crude')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -3573,6 +4207,46 @@
 					"url": "[parameters('HttpServer4_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HttpServer5')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('HttpServer5_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('HttpServer5_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('HttpServer5_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HttpServer6')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('HttpServer6_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('HttpServer6_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('HttpServer6_password')]"
+					}
 				}
 			},
 			"dependsOn": []
@@ -3975,6 +4649,21 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/WorldBank_LinkedService')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('WorldBank_LinkedService_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/limpia')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -4020,15 +4709,7 @@
 			"properties": {
 				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "DataSource",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
+				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -4044,9 +4725,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/DataSource')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
@@ -4112,7 +4791,26 @@
 						"parameters{",
 						"     parameter1 as string ('indicator_id')",
 						"}",
-						"source(allowSchemaDrift: true,",
+						"source(output(",
+						"          country_value as string,",
+						"          date as long,",
+						"          countryiso3code as string,",
+						"          NY_GDP_MKTP_CD as double,",
+						"          SH_STA_SUIC_P5 as double,",
+						"          SP_DYN_TFRT_IN as double,",
+						"          SP_ADO_TFRT as double,",
+						"          SP_DYN_CBRT_IN as double,",
+						"          SP_DYN_IMRT_IN as double,",
+						"          SH_XPD_CHEX_PC_CD as double,",
+						"          SH_XPD_CHEX_GD_ZS as double,",
+						"          SP_DYN_LE00_IN as double,",
+						"          SP_POP_GROW as double,",
+						"          SP_POP_TOT as integer,",
+						"          NY_GDP_PCAP_CD as double,",
+						"          ncd_bmi_25a as double,",
+						"          ncd_hyp_prevalence_a as double",
+						"     ),",
+						"     allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     enableCdc: true,",
 						"     mode: 'read',",

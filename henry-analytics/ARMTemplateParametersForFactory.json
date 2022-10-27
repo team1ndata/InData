@@ -29,7 +29,22 @@
 		"AzureBlobStorage16_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage17_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage18_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage19_connectionString": {
+			"value": ""
+		},
 		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage20_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage21_connectionString": {
 			"value": ""
 		},
 		"AzureBlobStorage3_connectionString": {
@@ -68,6 +83,9 @@
 		"AzureSqlDatabase3_connectionString": {
 			"value": ""
 		},
+		"Azure_SQL_Linked_Service_connectionString": {
+			"value": ""
+		},
 		"BlobParquet_connectionString": {
 			"value": ""
 		},
@@ -75,6 +93,12 @@
 			"value": ""
 		},
 		"HenryML_connectionString": {
+			"value": ""
+		},
+		"HttpServer5_password": {
+			"value": ""
+		},
+		"HttpServer6_password": {
 			"value": ""
 		},
 		"LifeExp_connectionString": {
@@ -139,6 +163,18 @@
 		},
 		"HttpServer4_properties_typeProperties_url": {
 			"value": "http://api.worldbank.org/V2/incomeLevel/LIC/country"
+		},
+		"HttpServer5_properties_typeProperties_url": {
+			"value": "https://ml.azure.com/fileexplorerAzNB?wsid=/subscriptions/db9a7dcd-aeea-49d1-83eb-52ebd1441034/resourcegroups/Prueba/providers/Microsoft.MachineLearningServices/workspaces/HenryML&tid=1c7cee35-d402-4411-bbd7-2d813566a583&activeFilePath=Users/CAESARCAPO/dataset_filled.csv"
+		},
+		"HttpServer5_properties_typeProperties_userName": {
+			"value": "caesarcapo"
+		},
+		"HttpServer6_properties_typeProperties_url": {
+			"value": "https://ml.azure.com/fileexplorerAzNB?wsid=/subscriptions/db9a7dcd-aeea-49d1-83eb-52ebd1441034/resourcegroups/Prueba/providers/Microsoft.MachineLearningServices/workspaces/HenryML&tid=1c7cee35-d402-4411-bbd7-2d813566a583&activeFilePath=Users/CAESARCAPO/dataset_filled.csv"
+		},
+		"HttpServer6_properties_typeProperties_userName": {
+			"value": "caesarcapo"
 		},
 		"HttpServer_Henry_properties_typeProperties_url": {
 			"value": "https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=excel"
@@ -205,6 +241,9 @@
 		},
 		"TEST_properties_typeProperties_url": {
 			"value": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ne;et;eg;cd;tz;za;mt;se;it;es;pl;fr;in;pk;bd;af;np;sk;id;usa;cn/indicator/SH.XPD.CHEX.PC.CD;SH.XPD.CHEX.GD.ZS;SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.CDRT.IN;NY.GDP.MKTP.KD;NY.GDP.MKTP.KN;SH.STA.TRAF.P5?&source=2&format=json&per_page=30132"
+		},
+		"WorldBank_LinkedService_properties_typeProperties_url": {
+			"value": "http://api.worldbank.org/v2/country/pe;co;mx;cl;bra;ar;ng;et;eg;cd;tz;de;za;it;es;pl;fr;in;pk;bd;af;np;id;usa;cn;ru;gb;au;ro;lk/indicator/SP.ADO.TFRT;SP.DYN.CBRT.IN;SH.XPD.CHEX.GD.ZS;SH.XPD.CHEX.PC.CD;SP.DYN.TFRT.IN;SP.DYN.LE00.IN;SP.DYN.IMRT.IN;SP.POP.GROW;SP.POP.TOTL;SH.STA.SUIC.P5;NY.GDP.MKTP.CD;NY.GDP.PCAP.CD?&source=2&format=json&per_page=23000"
 		}
 	}
 }
