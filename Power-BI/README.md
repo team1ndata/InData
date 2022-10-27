@@ -1,7 +1,7 @@
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&pause=900&width=435&lines=DATA+ANALYTICS)](https://git.io/typing-svg)
 
-## Información a analizar
+# Información a analizar
 
 La información analizada proveniente del [WorldBank](https://data.worldbank.org/) y la [OMS](https://www.who.int/es/data), fue discretizada en 5 regiones, en donde se intentó tomar regiones y países representativos en cantidad de población y que compartieran rasgos en común, así:
 
@@ -27,7 +27,7 @@ Notas:
 - En la región CLA se decidió excluir a Venezuela toda vez que la información disponible presentaba mala calidad en cuanto a la cantidad de datos y se incluyó Chile.
 
 #
-## KPIs
+# KPIs
 
 De acuerdo a diversas fuentes consultadas, entre ellas la OMS y la tesis de grado en Economía [La relación entre esperanza de vida, desarrollo económico y medio ambiente]([https://ruc.udc.es/dspace/bitstream/handle/2183/16409/RodriguezRodriguez_David_TFG_2015.pdf?sequence=2](https://ruc.udc.es/dspace/bitstream/handle/2183/16409/RodriguezRodriguez_David_TFG_2015.pdf?sequence=2)) de David Rodríguez Rodríguez en la Universidad de la Coruña, la Esperanza de vida al nacer tiene una estrecha relación con el nivel de desarrollo del país, medido en cuanto a su PBI per cápita. Así las cosas, uno de los KPIs se definió basado en esta información y teniendo en cuenta la clasificación según los niveles de ingresos establecidos por el [Banco Mundial](https://blogs.worldbank.org/es/datos/nuevas-clasificaciones-de-los-paises-elaboradas-por-el-banco-mundial-segun-los-niveles-de-ingreso).
 
@@ -45,7 +45,7 @@ En resumen, se definieron los siguientes KPIs para medir y entender mejor el com
 4. Hipertensión, objetivo: Menor a 33% en la prevalencia en adultos.
 
 #
-## Power BI
+# Power BI
 
 Para la realización del análisis de la información se usó el programa Power BI, ya que el mismo presenta herramientas de conexión con Azure que facilita el procesamiento de los datos provenientes de SQL.
 
@@ -73,13 +73,13 @@ Una vez realizados los anteriores pasos, se elaboró el Dashboard para el análi
 ![image](https://user-images.githubusercontent.com/106342923/198292264-fab79a44-7b7c-449c-a5f5-803e49dcc089.png)
 
 #
-## Análisis
+# Análisis
 
-# GDP: 
+## GDP: 
 Como se señaló anteriormente, el GDP per cápita se encuentra estrechamente relacionado con la Expectativa de vida, encontrando así que aquellos países cuyos ingresos son superiores, la Expectativa de vida al nacer es mayor, por lo cual las regiones en donde podemos ver este comportamiento corresponden a EUU y WLD, teniendo en cuenta que en está última agrupación se encuentran países que son potencia mundial. Un análisis aparte merece la región de CLA, en donde los ingresos per cápita, en promedio, son medios, pero presentan una buena esperanza de vida, para lo cual sería necesario entrar a analizar otros factores, como las condiciones ambientales, los rasgos culturales, condiciones de salud y especialmente la mortalidad infantil.
 
-#Mortalidad infantil:
+## Mortalidad infantil:
 La mortalidad infantil es tal vez el sigiente factor que es determinante en la estimación de la esperanza de vida y seguramente es subsecuente del nivel de GDP, dado que las regiones que tienen un peor comportamiento en la esperanza de vida tienen un bajo desempeño en este aspecto, como se puede observar en AFR y SAS. Es entendible la relación entre el GDP y la mortalidad infantil, dado que a menores ingresos, la población menor se encuentra con menos garantías y seguridad social, recordando que la muerte de población menor, tiene mucho peso en el promedio del cálculo de la esperanza de vida.
 
-# Hipertensión:
+## Hipertensión:
 
