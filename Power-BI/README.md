@@ -79,12 +79,14 @@ Una vez realizados los anteriores pasos, se elaboró el Dashboard para el análi
 Como se señaló anteriormente, el GDP per cápita se encuentra estrechamente relacionado con la Expectativa de vida, encontrando así que aquellos países cuyos ingresos son superiores, la Expectativa de vida al nacer es mayor, por lo cual las regiones en donde podemos ver este comportamiento corresponden a EUU y WLD, teniendo en cuenta que en está última agrupación se encuentran países que son potencia mundial. Un análisis aparte merece la región de CLA, en donde los ingresos per cápita, en promedio, son medios, pero presentan una buena esperanza de vida, para lo cual sería necesario entrar a analizar otros factores, como las condiciones ambientales, los rasgos culturales, condiciones de salud y especialmente la mortalidad infantil.
 
 ![image](https://user-images.githubusercontent.com/106342923/198308659-6d379081-1fe9-441a-899f-c55c2791ed57.png)
+
 En la imagen podemos observar la comparación de las regiones AFR y EUU, claramente separadas por la línea de resaltado amarillo.
 
 ## Mortalidad infantil:
 La mortalidad infantil es tal vez el sigiente factor que es determinante en la estimación de la esperanza de vida y seguramente es subsecuente del nivel de GDP, dado que las regiones que tienen un peor comportamiento en la esperanza de vida tienen un bajo desempeño en este aspecto, como se puede observar en AFR y SAS. Es entendible la relación entre el GDP y la mortalidad infantil, dado que a menores ingresos, la población menor se encuentra con menos garantías y seguridad social, recordando que la muerte de población menor, tiene mucho peso en el promedio del cálculo de la esperanza de vida.
 
 ![image](https://user-images.githubusercontent.com/106342923/198309866-7dcde370-d0fc-47fd-9736-fc6947df995c.png)
+
 Comparación CLA, AFR y SAS, toda la región CLA se encuentra bajo la línea de resaltado amarillo.
 
 ## Hipertensión:
