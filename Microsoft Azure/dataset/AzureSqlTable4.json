@@ -1,0 +1,26 @@
+{
+	"name": "AzureSqlTable4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDWHENRY",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "tableName",
+				"type": "varchar"
+			},
+			{
+				"name": "waterMarkVal",
+				"type": "datetime2",
+				"scale": 7
+			}
+		],
+		"typeProperties": {
+			"schema": "Raw",
+			"table": "WaterMark"
+		}
+	}
+}
