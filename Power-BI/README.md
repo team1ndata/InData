@@ -70,7 +70,7 @@ Una vez realizados los anteriores pasos, se elaboró el Dashboard para el análi
 
 - Región
 
-![image](https://user-images.githubusercontent.com/106342923/198292005-f57d5005-714a-43ed-a810-cfd646176328.png)
+![image](https://user-images.githubusercontent.com/106342923/198292264-fab79a44-7b7c-449c-a5f5-803e49dcc089.png)
 
 #
 ## Análisis
