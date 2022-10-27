@@ -75,4 +75,6 @@ Una vez realizados los anteriores pasos, se elaboró el Dashboard para el análi
 #
 ## Análisis
 
-...
+Como se señaló anteriormente, el GDP per cápita se encuentra estrechamente relacionado con la Expectativa de vida, encontrando así que aquellos países cuyos ingresos son superiores, la Expectativa de vida al nacer es mayor, por lo cual las regiones en donde podemos ver este comportamiento corresponden a EUU y WLD, teniendo en cuenta que en está última agrupación se encuentran países que son potencia mundial. Un análisis aparte merece la región de CLA, en donde los ingresos per cápita, en promedio, son medios, pero presentan una buena esperanza de vida, para lo cual sería necesario entrar a analizar otros factores, como las condiciones ambientales, los rasgos culturales, condiciones de salud y especialmente la mortalidad infantil.
+
+
