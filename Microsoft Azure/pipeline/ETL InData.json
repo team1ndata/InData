@@ -386,33 +386,6 @@
 				]
 			},
 			{
-				"name": "Datatypes Format",
-				"type": "SqlServerStoredProcedure",
-				"dependsOn": [
-					{
-						"activity": "Data Cleansed a SQL",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[dbo].[Transformation_data_types]"
-				},
-				"linkedServiceName": {
-					"referenceName": "SQLDWHENRY",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
 				"name": "Machine Learning Execute Pipeline1",
 				"type": "AzureMLExecutePipeline",
 				"dependsOn": [
