@@ -110,7 +110,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Machine Learning Execute Pipeline1",
+						"activity": "Imputacion_valores_faltantes",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -386,7 +386,7 @@
 				]
 			},
 			{
-				"name": "Machine Learning Execute Pipeline1",
+				"name": "Imputacion_valores_faltantes",
 				"type": "AzureMLExecutePipeline",
 				"dependsOn": [
 					{
