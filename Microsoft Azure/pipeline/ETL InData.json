@@ -110,7 +110,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "SQL a Storage",
+						"activity": "Machine Learning Execute Pipeline1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -135,11 +135,14 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "ParquetSource",
+						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
@@ -162,7 +165,7 @@
 								"sink": {
 									"name": "country_value",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -174,7 +177,7 @@
 								"sink": {
 									"name": "date",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -186,7 +189,7 @@
 								"sink": {
 									"name": "countryiso3code",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -197,8 +200,8 @@
 								},
 								"sink": {
 									"name": "NY.GDP.MKTP.CD",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -209,8 +212,8 @@
 								},
 								"sink": {
 									"name": "SH.STA.SUIC.P5",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -221,8 +224,8 @@
 								},
 								"sink": {
 									"name": "SP.DYN.TFRT.IN",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -233,8 +236,8 @@
 								},
 								"sink": {
 									"name": "SP.ADO.TFRT",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -245,8 +248,8 @@
 								},
 								"sink": {
 									"name": "SP.DYN.CBRT.IN",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -257,8 +260,8 @@
 								},
 								"sink": {
 									"name": "SP.DYN.IMRT.IN",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -269,8 +272,8 @@
 								},
 								"sink": {
 									"name": "SH.XPD.CHEX.PC.CD",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -281,8 +284,8 @@
 								},
 								"sink": {
 									"name": "SH.XPD.CHEX.GD.ZS",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -293,8 +296,8 @@
 								},
 								"sink": {
 									"name": "SP.DYN.LE00.IN",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -305,8 +308,8 @@
 								},
 								"sink": {
 									"name": "SP.POP.GROW",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -317,8 +320,8 @@
 								},
 								"sink": {
 									"name": "SP.POP.TOTL",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -329,8 +332,8 @@
 								},
 								"sink": {
 									"name": "NY.GDP.PCAP.CD",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -341,8 +344,8 @@
 								},
 								"sink": {
 									"name": "ncd_bmi_25a",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
@@ -353,8 +356,8 @@
 								},
 								"sink": {
 									"name": "ncd_hyp_prevalence_a",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							}
 						],
@@ -367,7 +370,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Parquet4",
+						"referenceName": "DelimitedText10",
 						"type": "DatasetReference"
 					}
 				],
@@ -406,6 +409,33 @@
 				},
 				"linkedServiceName": {
 					"referenceName": "SQLDWHENRY",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Machine Learning Execute Pipeline1",
+				"type": "AzureMLExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "SQL a Storage",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"mlPipelineId": "cf400623-5f70-4511-99f7-05f22c5fd88b"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureMLService1",
 					"type": "LinkedServiceReference"
 				}
 			}
