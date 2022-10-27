@@ -108,14 +108,7 @@
 			{
 				"name": "Data Cleansed a SQL",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "SQL a Storage",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -135,14 +128,11 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
@@ -370,7 +360,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CSV_Data_Cleansed",
+						"referenceName": "Parquet4",
 						"type": "DatasetReference"
 					}
 				],

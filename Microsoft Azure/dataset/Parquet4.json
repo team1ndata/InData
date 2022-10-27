@@ -1,0 +1,94 @@
+{
+	"name": "Parquet4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage19",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "data.dataset.parquet",
+				"folderPath": "azureml/3d7746d3-0818-422b-990f-1abf68fc6c4a/Result_Dataset",
+				"container": "azureml-blobstore-39f905b4-7060-4ac1-9ca2-174b0bbb13e2"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "NY.GDP.MKTP.CD",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH.STA.SUIC.P5",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.DYN.TFRT.IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.ADO.TFRT",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.DYN.CBRT.IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.DYN.IMRT.IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH.XPD.CHEX.PC.CD",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SH.XPD.CHEX.GD.ZS",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.DYN.LE00.IN",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.POP.GROW",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "SP.POP.TOTL",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "NY.GDP.PCAP.CD",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "ncd_bmi_25a",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "ncd_hyp_prevalence_a",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "country_value",
+				"type": "UTF8"
+			},
+			{
+				"name": "date",
+				"type": "INT64"
+			},
+			{
+				"name": "countryiso3code",
+				"type": "UTF8"
+			},
+			{
+				"name": "__index_level_0__",
+				"type": "INT64"
+			}
+		]
+	}
+}
