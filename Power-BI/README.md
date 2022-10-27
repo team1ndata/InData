@@ -66,11 +66,11 @@ Una vez realizados los anteriores pasos, se elaboró el Dashboard para el análi
 
 - Principal
 
-![image](https://user-images.githubusercontent.com/106342923/197958610-fb4d7610-696c-4551-9eae-c67168b93ca3.png)
+![image](https://user-images.githubusercontent.com/106342923/198291803-eae32b8d-8b11-4479-af8b-2c6083bf411b.png)
 
 - Región
 
-![image](https://user-images.githubusercontent.com/106342923/197958687-41402d77-f466-4e0b-a4a9-6baf4fbf1f53.png)
+![image](https://user-images.githubusercontent.com/106342923/198292005-f57d5005-714a-43ed-a810-cfd646176328.png)
 
 #
 ## Análisis
