@@ -11,20 +11,22 @@ La información analizada proveniente del [WorldBank](https://data.worldbank.org
 
 2. Africa(AFR)
    NGA(Nigeria)-ETH(Ethiopia)-EGY(Egipto)-COD(Congo)-TZA(Tanzania)-ZAF(South Africa)
+   
 3. European Union(EUU)
    DEU(Germany)-FRA(Francia)-ITA(Italia)-ESP(España)-POL(Polonia)-ROU(Romania)
+   
 4. South Asia(SAS)
    IND(India)-PAK(Pakistan)-BGD(Bangladesh)-AFG(Afghanistan)-NPL(Nepal)-LKA(Sri Lanka)
+   
 5. World(WLD)
    CHN(China)-RUS(Rusia)-USA(United States)-IDN(Indonesia)-GBR(Gran Bretaña)-AUS(Australia)
-
-
 
 Notas:
 
 - La región "World" fue creada para incluir aquellos países referentes a nivel mundial que quedaron fuera de la selección de regiones representativas, por lo que es posible que sus valores presenten comportamientos no correlacionados entre sí.
 - En la región CLA se decidió excluir a Venezuela toda vez que la información disponible presentaba mala calidad en cuanto a la cantidad de datos y se incluyó Chile.
 
+#
 ## KPIs
 
 De acuerdo a diversas fuentes consultadas, entre ellas la OMS y la tesis de grado en Economía [La relación entre esperanza de vida, desarrollo económico y medio ambiente]([https://ruc.udc.es/dspace/bitstream/handle/2183/16409/RodriguezRodriguez_David_TFG_2015.pdf?sequence=2](https://ruc.udc.es/dspace/bitstream/handle/2183/16409/RodriguezRodriguez_David_TFG_2015.pdf?sequence=2)) de David Rodríguez Rodríguez en la Universidad de la Coruña, la Esperanza de vida al nacer tiene una estrecha relación con el nivel de desarrollo del país, medido en cuanto a su PBI per cápita. Así las cosas, uno de los KPIs se definió basado en esta información y teniendo en cuenta la clasificación según los niveles de ingresos establecidos por el [Banco Mundial](https://blogs.worldbank.org/es/datos/nuevas-clasificaciones-de-los-paises-elaboradas-por-el-banco-mundial-segun-los-niveles-de-ingreso).
@@ -42,6 +44,7 @@ En resumen, se definieron los siguientes KPIs para medir y entender mejor el com
 3. Mortalidad infantil, objetivo: Menor a 25 muertes por cada 1000 niños.
 4. Hipertensión, objetivo: Menor a 33% en la prevalencia en adultos.
 
+#
 ## Power BI
 
 Para la realización del análisis de la información se usó el programa Power BI, ya que el mismo presenta herramientas de conexión con Azure que facilita el procesamiento de los datos provenientes de SQL.
@@ -69,6 +72,7 @@ Una vez realizados los anteriores pasos, se elaboró el Dashboard para el análi
 
 ![image](https://user-images.githubusercontent.com/106342923/197958687-41402d77-f466-4e0b-a4a9-6baf4fbf1f53.png)
 
+#
 ## Análisis
 
 ...
