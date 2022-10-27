@@ -47,10 +47,10 @@ Para la realización del análisis de la información se usó el programa Power 
 
 Se realizaron los siguientes pasos para disponibilizar la información en el programa:
 
-- Conexión a SQL Server a las Tablas DWH Countries, DWH Series y XXX
-- Creación en Power Query de la tabla Regions
-- Anulación de la dinamización de las columnas correspondientes a las series en la tabla XXX e inclusión de la información de región.
-- Verificación del modelo relacional
+- Conexión a SQL Server a las Tablas DWH Countries, DWH Series y DHW Data Cleansed.
+- Creación en Power Query de la tabla Regions.
+- Anulación de la dinamización de las columnas correspondientes a las series en la tabla DHW Data Cleansed e inclusión de la información de región.
+- Verificación del modelo relacional.
 
 ![image](https://user-images.githubusercontent.com/106342923/198086094-45f99d5d-70db-409d-b714-4feb021ad804.png)
 
