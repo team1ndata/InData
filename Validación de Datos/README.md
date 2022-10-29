@@ -9,5 +9,5 @@
 
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=50000&color=F7AFAF&width=500&lines=Contenido)](https://git.io/typing-svg)
-- Limpieza_MICE.ipynb : Este notebook contiene el paso a paso de de una interpolacion en python hecha script para tambien ser usada dentro de azure .
+- Limpieza_MICE.ipynb : Este notebook contiene el paso a paso de de una interpolacion en python hecha script para tambien ser usada dentro de azure.
 #
