@@ -5,7 +5,7 @@
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=10000&color=72F722&width=455&lines=Life+Expectancy)](https://git.io/typing-svg)
 Este proyecto esta basado en determinar ciertos aspectos que influyen en la expectativa de vida en distintas regiones del mundo.
-Para ello se utilizaron datos extraidos del  [WorldBank](https://data.worldbank.org/) y la [OMS](https://www.who.int/es/data).
+Para ello se utilizaron datos extraídos del  [WorldBank](https://data.worldbank.org/) y la [OMS](https://www.who.int/es/data).
 #
 ## [![Typing SVG](https://readme-typing-svg.demolab.com?font=Yrsa&pause=10000&color=F7F7F7&width=535&lines=Series+%3A)](https://git.io/typing-svg)
 Se utilizaron 14 series , las cuales 12 son provenientes del [WorldBank](https://data.worldbank.org/) y 2 de la [OMS](https://www.who.int/es/data), los datos extraídos estuvieron en un intervalo de 30 años (1990-2020)
