@@ -1,7 +1,8 @@
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&duration=2000&pause=2000&color=1AA9F7&width=435&lines=En+Datos+basamos+nuestro+trabajo+para+brindar;%E2%9C%94++An%C3%A1lisis+y+soluciones++inteligentes++)](https://git.io/typing-svg)
 ![portada](https://user-images.githubusercontent.com/93687273/196827800-f59a9384-a362-4804-8fe5-601c9a3b0a58.png)
-
+## Video proyecto: 
+https://www.youtube.com/watch?v=n5r_dq2Oa5I&t=6s
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=10000&color=72F722&width=455&lines=Life+Expectancy)](https://git.io/typing-svg)
 Este proyecto esta basado en determinar ciertos aspectos que influyen en la expectativa de vida en distintas regiones del mundo.
