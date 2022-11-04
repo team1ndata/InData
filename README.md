@@ -1,9 +1,6 @@
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&duration=2000&pause=2000&color=1AA9F7&width=435&lines=En+Datos+basamos+nuestro+trabajo+para+brindar;%E2%9C%94++An%C3%A1lisis+y+soluciones++inteligentes++)](https://git.io/typing-svg)
 ![portada](https://user-images.githubusercontent.com/93687273/196827800-f59a9384-a362-4804-8fe5-601c9a3b0a58.png)
-## Video proyecto: 
-https://user-images.githubusercontent.com/93687273/200031283-14c667cd-2512-47ec-b27e-244b37278410.mp4
-
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=10000&color=72F722&width=455&lines=Life+Expectancy)](https://git.io/typing-svg)
 Este proyecto esta basado en determinar ciertos aspectos que influyen en la expectativa de vida en distintas regiones del mundo.
@@ -32,5 +29,9 @@ de tal manera que podamos inferir  la influencia de ciertos parametros en la exp
 Se identificaron las relaciones que existen entre las variables en eventos pasados para luego explotarlas y predecir lo que puede ocurrir si ciertas estadisticas varían, se utilizó RandomForestRegression para esta [aplicación](https://brakions-streamlit-test-app-ifwq1h.streamlitapp.com/), se estandarizaron los valores de -2 a 2.
 
 ![predict](https://user-images.githubusercontent.com/93687273/196829652-3e0ba988-7e68-4b50-bc89-f5fdc0466781.png)
+#
+## [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=27&pause=1000&color=F70097&width=435&lines=Video+del+Proyecto+%3A)](https://git.io/typing-svg) 
+https://user-images.githubusercontent.com/93687273/200031283-14c667cd-2512-47ec-b27e-244b37278410.mp4
+#
 
 
