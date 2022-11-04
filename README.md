@@ -2,7 +2,7 @@
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&duration=2000&pause=2000&color=1AA9F7&width=435&lines=En+Datos+basamos+nuestro+trabajo+para+brindar;%E2%9C%94++An%C3%A1lisis+y+soluciones++inteligentes++)](https://git.io/typing-svg)
 ![portada](https://user-images.githubusercontent.com/93687273/196827800-f59a9384-a362-4804-8fe5-601c9a3b0a58.png)
 ## Video proyecto: 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n5r_dq2Oa5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://user-images.githubusercontent.com/93687273/200031283-14c667cd-2512-47ec-b27e-244b37278410.mp4
 
 #
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=10000&color=72F722&width=455&lines=Life+Expectancy)](https://git.io/typing-svg)
