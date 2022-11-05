@@ -1,9 +1,11 @@
 # 
 #                                       [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=1000000&color=F7F7F7&width=455&lines=C+O+N+T+E+N+I+D+O)](https://git.io/typing-svg)
 #
+                                       ![ezgif-4-fd6d476d74](https://user-images.githubusercontent.com/93687273/200097438-f3fddc67-f880-438f-9f8e-df8e7a7198ec.gif)
+#
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=25&pause=10000&color=F77C07&width=455&lines=Graficas+x+Series)](https://git.io/typing-svg)
 En este apartado se puede vizualizar la representacion grafica de una Serie por cada region con sus  paises represetativos.
-
+#
 - Ejemplo:
 
 ![Seriesxregionejemplo](https://user-images.githubusercontent.com/93687273/196831897-d3f62244-d8bd-42fb-8fa9-880843149adb.png)
